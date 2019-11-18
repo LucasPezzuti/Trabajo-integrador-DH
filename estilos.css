@@ -1,0 +1,22 @@
+
+body{
+    font-family: 'Lato', sans-serif;
+}
+
+
+h1 h2 h3{
+font-family: 'Montserrat', sans-serif;
+}
+
+.bg-azul {
+background-color:#a5a9b0;
+}
+.pt-4{
+    background-color:#a5a9b0;
+}
+#navbarNav{
+    float: left !important;
+}
+a{
+    font-family: 'Lato', sans-serif;;
+}

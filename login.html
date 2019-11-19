@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Preguntas Frecuentes | Pet shop</title>
+    <title>Login | Pet shop</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/estilo.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
@@ -42,29 +42,17 @@
                 </li>           
               </ul>
             </div>
-            <i class="fas fa-sign-in-alt"> <a href="#" class="btn btn-primary">Login</a></i>
-    </nav>
-    <div align="center"><img src="imagenes/about.jpg" alt="logotipo" class="logo"></div>
-  <h1 id="textologo">Preguntas frecuentres</h1>
-  <body>
-    <div>
-    <h2>¿Cómo comprar?</h2>
-     <br>
-     <h3>1- Elige el producto que deseas comprar.Haz clic en el botón de "Agregar al carrito".</h3>
-     <h3>2- Se agregará el producto a tu carrito y te llevará al mismo.</h3>
-     <h3>3- Puedes seguir agregando otros productos al carrito o sino haz clic en "Procesar pedido".</h3>
-     <h3>4- Completa tus datos de contacto y haz clic en "Continuar".</h3>
-     <h3>5- Ingresa la dirección a donde deseas recibir el producto. Luego haz clic en "Continuar".</h3>
-     <h3>6- Selecciona el método de envío que desees y haz clic en "Continuar". Los envíos los realizo a través de MercadoEnvíos. El tiempo de entrega que figura en esta opción cuenta desde que despachamos el producto.</h3>
-     <h3>7- Elige el medio de pago.También puedes seleccionar la opción de "Acordar método de pago". Una vez que hayas elegido el medio de pago, haz clic en "Finalizar".</h3>
-     <h3>8- Finalmente en la página de Confirmación de compra puedes revisar toda la información de la compra. Luego haz clic en "Continuar".</h3>
-     <h3>9- Ahí serás redirigido a otra pantalla para que completes los datos sobre la forma de pago elegida. Después de confirmar la compra recibirás un correo de nuestra parte, ese no será un comprobante de pago.</h3>
-     <h3>10- Una vez acreditado el pago, haremos el envío correspondiente de los productos que hayas comprado.</h3>
-     <br>
-     <h2>¿Qué formas de pago aceptan?</h2><br>
-     <h3>Tarjeta de crédito, tarjeta de debito, transferencia bancaria,  Rapipago, Pagofácil o Cobro Espress o en un cajero Banelco o Link o pagar con dinero en cuenta de MercadoPago.</h3>
-     <br>
-     <h2>Envíos</h2>
-     <br>
-     <h3>Hacemos envíos a todo el país a través de Correo Argentino, Mercado Envios, el costo depende de la localidad. </h3>
-    </div>
+
+    <body>
+        <form action=“ingresar.php” method=“POST”>
+            <p>Usuario</p>
+            <input type=“text” placeholder=“usuario” name=“txtusuario” />
+            <br>
+            <p>Contraseña</p>
+            <input type=“password” placeholder=“contraseña” name=“txtpassword” />
+            <br>
+            <p><button type="submit">Ingresar</button></p>
+            <br>
+        </form>
+    </body>
+</html>

@@ -30,3 +30,9 @@ a{
     text-align: center;
 }
 
+h3 {
+    color: #ooo;
+    color: rgba(0, 0, 0, 0.5);
+    
+}
+

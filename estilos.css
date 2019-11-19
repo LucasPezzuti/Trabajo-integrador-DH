@@ -1,12 +1,18 @@
 
 body{
     font-family: 'Lato', sans-serif;
+	background-image: url("imagenes/patas.jpg");
 }
 
 
 h1 h2 h3{
 font-family: 'Montserrat', sans-serif;
 }
+
+h1{
+	color: purple;
+}
+
 
 .bg-azul {
 background-color:#a5a9b0;

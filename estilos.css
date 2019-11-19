@@ -20,3 +20,13 @@ background-color:#a5a9b0;
 a{
     font-family: 'Lato', sans-serif;;
 }
+.logo{
+    display: block;
+    margin:auto;
+    text-align: center;
+    
+}
+#textologo{
+    text-align: center;
+}
+

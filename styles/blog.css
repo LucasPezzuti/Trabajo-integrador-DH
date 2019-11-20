@@ -1084,14 +1084,7 @@ section
 {
 
 }
-.blog_post_image
-{
-	width: 100%;
-}
-.blog_post_image img
-{
-	max-width: 100%;
-}
+
 .blog_post_content
 {
 	padding-top: 30px;
@@ -1099,22 +1092,7 @@ section
 	padding-right: 198px;
 	padding-bottom: 54px;
 }
-.blog_post_date
-{
-	width: 163px;
-	height: 38px;
-	background: #bbe432;
-	text-align: center;
-}
-.blog_post_date a
-{
-	display: block;
-	font-family: 'Poppins', sans-serif;
-	font-size: 16px;
-	font-weight: 600;
-	color: #414141;
-	line-height: 38px;
-}
+
 .blog_post_title
 {
 	margin-top: 23px;
@@ -1144,76 +1122,17 @@ section
 {
 	margin-right: 19px;
 }
-.blog_post_author,
-.blog_post_author a
-{
-	font-size: 14px;
-	font-weight: 400;
-	color: #adadad;
-	-webkit-transition: all 200ms ease;
-	-moz-transition: all 200ms ease;
-	-ms-transition: all 200ms ease;
-	-o-transition: all 200ms ease;
-	transition: all 200ms ease;
-}
-.blog_post_author a:hover
-{
-	color: #bbe432;
-}
-.blog_post_category ul li
-{
-	font-size: 14px;
-	font-weight: 400;
-}
-.blog_post_category ul li:not(:last-child)
-{
-	margin-right: 8px;
-}
-.blog_post_category ul li a
-{
-	font-size: 14px;
-	font-weight: 700;
-	color: #bbe432;
-}
-.blog_post_comments a
-{
-	font-size: 14px;
-	font-weight: 700;
-	color: #bbe432;
+
 }
 .blog_post_text
 {
 	margin-top: 12px;
 }
-.load_more_row
-{
-	margin-top: 48px;
-}
-.load_more_button
-{
-	width: 138px;
-	height: 45px;
-	background: #edf4f6;
-	text-align: center;
-}
-.load_more_button:hover
-{
-	background: #bbe432
-}
-.load_more_button a
-{
-	display: block;
-	font-size: 14px;
-	font-weight: 700;
-	color: #414141;
-	line-height: 45px;
-	text-transform: uppercase;
-}
+
 
 /*********************************
 8. Newsletter
 *********************************/
-
 .newsletter
 {
 	width: 100%;
@@ -1323,7 +1242,7 @@ section
 }
 
 /*********************************
-9. Footer
+11. Footer
 *********************************/
 
 .footer
@@ -1595,21 +1514,4 @@ section
 .footer_social_item:hover .footer_social_title
 {
 	color: #414141;
-}
-/* Credits */
-.credits
-{
-	width: 100%;
-	background: #1a1a1a;
-}
-.credits_content
-{
-	width: 100%;
-	height: 81px;
-}
-.credits_text
-{
-	font-family: 'Poppins', sans-serif;
-	font-size: 12px;
-	color: #787878;
 }

@@ -308,28 +308,7 @@ section
 	padding-left: 21px;
 	padding-top: 23px;
 }
-.info_languages
-{
-	cursor: pointer;
-	padding-bottom: 5px;
-	padding-right: 20px;
-}
-.info_languages::after
-{
-	display: block;
-	position: absolute;
-	top: calc(50% - 1px);
-	-webkit-transform: translateY(-50%);
-	-moz-transform: translateY(-50%);
-	-ms-transform: translateY(-50%);
-	-o-transform: translateY(-50%);
-	transform: translateY(-50%);
-	right: 0;
-	width: 2px;
-	height: 10px;
-	background: #FFFFFF;
-	content: '';
-}
+
 .language_flag
 {
 	display: inline-block;
@@ -1384,117 +1363,7 @@ section
 	line-height: 45px;
 }
 
-/*********************************
-10. Newsletter
-*********************************/
 
-.newsletter
-{
-	width: 100%;
-	padding-top: 95px;
-	padding-bottom: 81px;
-}
-.newsletter_title
-{
-	font-family: 'Poppins', sans-serif;
-	font-size: 18px;
-	font-weight: 600;
-	color: #FFFFFF;
-	line-height: 1.2;
-	text-transform: uppercase;
-}
-.newsletter_subtitle
-{
-	font-family: 'Poppins', sans-serif;
-	font-size: 14px;
-	font-weight: 400;
-	color: #FFFFFF;
-	margin-top: 14px;
-}
-.newsletter_form_container
-{
-	margin-top: 94px;
-}
-.newsletter_form
-{
-	width: 100%;
-}
-.newsletter_input
-{
-	width: 100%;
-	height: 45px;
-	background: transparent;
-	border: none;
-	outline: none;
-	border-bottom: solid 2px #FFFFFF;
-	color: #FFFFFF;
-	-webkit-transition: all 200ms ease;
-	-moz-transition: all 200ms ease;
-	-ms-transition: all 200ms ease;
-	-o-transition: all 200ms ease;
-	transition: all 200ms ease;
-}
-.newsletter_input:hover,
-.newsletter_input:focus
-{
-	border-bottom: solid 2px #bbe432;
-}
-.newsletter_button
-{
-	position: absolute;
-	top: 0;
-	right: 0;
-	width: 138px;
-	height: 45px;
-	background: #bbe432;
-	color: #1a1a1a;
-	font-size: 14px;
-	font-weight: 700;
-	text-transform: uppercase;
-	border: none;
-	outline: none;
-	cursor: pointer;
-	-webkit-transition: all 200ms ease;
-	-moz-transition: all 200ms ease;
-	-ms-transition: all 200ms ease;
-	-o-transition: all 200ms ease;
-	transition: all 200ms ease;
-}
-.newsletter_input::-webkit-input-placeholder
-{
-	font-size: 12px !important;
-	font-weight: 400 !important;
-	font-style: italic;
-	color: #FFFFFF !important;
-}
-.newsletter_input:-moz-placeholder
-{
-	font-size: 12px !important;
-	font-weight: 400 !important;
-	font-style: italic;
-	color: #FFFFFF !important;
-}
-.newsletter_input::-moz-placeholder
-{
-	font-size: 12px !important;
-	font-weight: 400 !important;
-	font-style: italic;
-	color: #FFFFFF !important;
-} 
-.newsletter_input:-ms-input-placeholder
-{ 
-	font-size: 12px !important;
-	font-weight: 400 !important;
-	font-style: italic;
-	color: #FFFFFF !important;
-}
-.newsletter_input::input-placeholder
-{
-	font-size: 12px !important;
-	font-weight: 400 !important;
-	font-style: italic;
-	color: #FFFFFF !important;
-}
 
 /*********************************
 11. Footer
@@ -1528,8 +1397,8 @@ section
 	font-weight: 700;
 	line-height: 0.75;
 	color: #bbe432;
-	padding-left: 25px;
-	padding-right: 26px;
+	padding-left: 1px;
+	padding-right: 1px;
 }
 .footer_logo a > div span
 {
@@ -1625,73 +1494,7 @@ section
 	color: #414141;
 	font-weight: 700;
 }
-.footer_blog
-{
-	margin-top: 8px;
-	padding-right: 50px;
-}
-.footer_blog_container
-{
-	margin-top: 92px;
-}
-.footer_blog_item:not(:last-child)
-{
-	margin-bottom: 30px;
-}
-.footer_blog_image
-{
-	width: 68px;
-	height: 68px;
-}
-.footer_blog_image img
-{
-	max-width: 100%;
-}
-.footer_blog_content
-{
-	padding-left: 29px;
-}
-.footer_blog_title
-{
-	margin-top: -4px;
-}
-.footer_blog_title a
-{
-	font-family: 'Poppins', sans-serif;
-	font-size: 14px;
-	font-weight: 600;
-	color: #414141;
-	text-transform: uppercase;
-	line-height: 1.2;
-	-webkit-transition: all 200ms ease;
-	-moz-transition: all 200ms ease;
-	-ms-transition: all 200ms ease;
-	-o-transition: all 200ms ease;
-	transition: all 200ms ease;
-}
-.footer_blog_title a:hover
-{
-	color: #bbe432;
-}
-.footer_blog_date
-{
-	font-family: 'Poppins', sans-serif;
-	font-size: 12px;
-	font-weight: 400;
-	text-transform: uppercase;
-	color: #8f8f8f;
-	margin-top: 4px;
-}
-.footer_blog_link
-{
-	margin-top: 9px;
-}
-.footer_blog_link a
-{
-	font-size: 12px;
-	font-weight: 500;
-	color: #bbe432;
-}
+
 .footer_contact
 {
 	margin-top: 8px;
@@ -1769,21 +1572,4 @@ section
 .footer_social_item:hover .footer_social_title
 {
 	color: #414141;
-}
-/* Credits */
-.credits
-{
-	width: 100%;
-	background: #1a1a1a;
-}
-.credits_content
-{
-	width: 100%;
-	height: 81px;
-}
-.credits_text
-{
-	font-family: 'Poppins', sans-serif;
-	font-size: 12px;
-	color: #787878;
 }

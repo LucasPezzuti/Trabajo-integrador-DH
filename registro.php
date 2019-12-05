@@ -71,6 +71,8 @@ Email : <?php// isset($email) ? print $email : ""; ?> <br>
 
 
 <?php
+
+	
 if(isset($_POST["submit"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
     // El nombre y contraseña son campos obligatorios
     if(empty($_POST["nombre"])){
@@ -94,13 +96,22 @@ if(isset($_POST["submit"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
     }
     if(empty($_POST["direccion"])){
       $errores[] = "La direccion es requerida";
-    }
+	}
+	if($_FILES["imagen"]["error"] != 0){
+		$errores[]= "hubo error al cargar la imagen";
+	}else{
+		$ext = pathinfo($_FILES["imagen"]["name"], PATHINFO_EXTENSION);
+		if($ext != "jpg" && $ext != "jpeg" && $ext != "png"){
+			$errores[] = "La extension no es requerida";
+		}
+	}
     // Si el array $errores está vacío, se aceptan los datos y se asignan a variables
     if(empty($errores)) {
         $nombre = filtrado($_POST["nombre"]);
         $password = filtrado($_POST["password"]);
         $email = filtrado($_POST["email"]);
-    }
+	}
+
 }
 
 ?>
@@ -114,7 +125,32 @@ if(isset($_POST["submit"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
         alert("Tienes el siguiente error :'. $error.'");
         </script>';
     }
+	}
+	else{
+	if($_POST){
+		$db= file_get_contents('usuarios.json');
+		$usuarios = json_decode($db,true); 
+		$usuarios[]= [
+			"nombre"=>$_POST['nombre'],
+			"apellido" => $_POST['apellido'],
+			"email" => $_POST['email'],
+			"direccion"=>$_POST['direccion'],
+			"ciudad"=>$_POST['ciudad'],
+			"pais"=>$_POST['pais'],
+			"password" => password_hash($_POST['password'],PASSWORD_DEFAULT)
+			//$hash = password_hash($_POST['password'], PASSWORD_DEFAULT);   
+		];
+		
+		
+		$db= json_encode($usuarios);
+		file_put_contents('usuarios.json',$db);
+
+	}if($_FILES){
+		move_uploaded_file($_FILES["imagen"]["tmp_name"], "archivos/imagen.". $ext);
+
+	}
 }
+
 ?>
 </ul>
 
@@ -314,7 +350,7 @@ if(isset($_POST["submit"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
 									<div class="home_title"> Registrar<i class="fas fa-street-view"></i></div>
 								<br>
                                     
-                                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
                                         <div class="form-row">
                                           <div class="form-group col-md-6">
                                             <label for="inputEmail4">Email</label>
@@ -351,8 +387,18 @@ if(isset($_POST["submit"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
                                             <label for="inputState">Pais</label>
                                             <input type="text" class="form-control" name="pais" id="inputState" value="<?php echo ((isset($_POST["pais"])) ? (htmlspecialchars($_POST["pais"], ENT_QUOTES)) : ("")); ?>">
                                       
-                                          </div>
-                                        </div>
+										  </div>
+										 <div>
+											
+										 <label for="">Foto de perfil:</label>
+											<input type="file" name="imagen">
+											
+
+										 </div>
+										  
+
+										</div>
+										<br>
                                        
                                         <button type="submit" name="submit" value="Enviar" class="btn btn-primary">Registrar</button> 
 

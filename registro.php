@@ -51,7 +51,6 @@ if(isset($_POST["submit"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
   $password = filtrado($_POST["password"]);
   $apellido = filtrado($_POST["apellido"]);
   $pais = filtrado($_POST["pais"]);
-  // Utilizamos implode para pasar el array a string
   $ciudad = filtrado($_POST["ciudad"]);
   $email = filtrado($_POST["email"]);
   $direccion = filtrado($_POST["direccion"]);
@@ -60,19 +59,9 @@ if(isset($_POST["submit"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
 
 ?>
 
-<!-- muestra los datos 
- <?php //if(isset($_POST["submit"])): ?> 
-<h2>Mostrar datos enviados</h2>
-Nombre : <?php //isset($nombre) ? print $nombre : ""; ?> <br>
-Contraseña : <?php// isset($password) ? print $password : ""; ?> <br>
-Email : <?php// isset($email) ? print $email : ""; ?> <br>
-<?php //endif; ?> 
--->
-
 
 <?php
 
-	
 if(isset($_POST["submit"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
     // El nombre y contraseña son campos obligatorios
     if(empty($_POST["nombre"])){
@@ -105,12 +94,6 @@ if(isset($_POST["submit"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
 			$errores[] = "La extension no es requerida";
 		}
 	}
-    // Si el array $errores está vacío, se aceptan los datos y se asignan a variables
-    if(empty($errores)) {
-        $nombre = filtrado($_POST["nombre"]);
-        $password = filtrado($_POST["password"]);
-        $email = filtrado($_POST["email"]);
-	}
 
 }
 
@@ -127,7 +110,8 @@ if(isset($_POST["submit"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
     }
 	}
 	else{
-	if($_POST){
+	// Si el array $errores está vacío y existen datos en $_POST, se aceptan los datos y se cargan en el JSON
+	if($_POST&&empty($errores)){
 		$db= file_get_contents('usuarios.json');
 		$usuarios = json_decode($db,true); 
 		$usuarios[]= [
@@ -138,7 +122,7 @@ if(isset($_POST["submit"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
 			"ciudad"=>$_POST['ciudad'],
 			"pais"=>$_POST['pais'],
 			"password" => password_hash($_POST['password'],PASSWORD_DEFAULT)
-			//$hash = password_hash($_POST['password'], PASSWORD_DEFAULT);   
+			
 		];
 		
 		

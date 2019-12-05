@@ -283,40 +283,7 @@ section
 	padding-left: 21px;
 	padding-top: 23px;
 }
-.info_languages
-{
-	cursor: pointer;
-	padding-bottom: 5px;
-	padding-right: 20px;
-}
-.info_languages::after
-{
-	display: block;
-	position: absolute;
-	top: calc(50% - 1px);
-	-webkit-transform: translateY(-50%);
-	-moz-transform: translateY(-50%);
-	-ms-transform: translateY(-50%);
-	-o-transform: translateY(-50%);
-	transform: translateY(-50%);
-	right: 0;
-	width: 2px;
-	height: 10px;
-	background: #FFFFFF;
-	content: '';
-}
-.language_flag
-{
-	display: inline-block;
-	width: 20px;
-	height: 12px;
-	margin-right: 6px;
-	vertical-align: center;
-}
-.language_flag img
-{
-	max-width: 100%;
-}
+
 .dropdown_text
 {
 	display: inline-block;
@@ -1273,8 +1240,8 @@ section
 	font-weight: 700;
 	line-height: 0.75;
 	color: #bbe432;
-	padding-left: 25px;
-	padding-right: 26px;
+	padding-left: 1px;
+	padding-right: 1px;
 }
 .footer_logo a > div span
 {
@@ -1370,73 +1337,7 @@ section
 	color: #414141;
 	font-weight: 700;
 }
-.footer_blog
-{
-	margin-top: 8px;
-	padding-right: 50px;
-}
-.footer_blog_container
-{
-	margin-top: 92px;
-}
-.footer_blog_item:not(:last-child)
-{
-	margin-bottom: 30px;
-}
-.footer_blog_image
-{
-	width: 68px;
-	height: 68px;
-}
-.footer_blog_image img
-{
-	max-width: 100%;
-}
-.footer_blog_content
-{
-	padding-left: 29px;
-}
-.footer_blog_title
-{
-	margin-top: -4px;
-}
-.footer_blog_title a
-{
-	font-family: 'Poppins', sans-serif;
-	font-size: 14px;
-	font-weight: 600;
-	color: #414141;
-	text-transform: uppercase;
-	line-height: 1.2;
-	-webkit-transition: all 200ms ease;
-	-moz-transition: all 200ms ease;
-	-ms-transition: all 200ms ease;
-	-o-transition: all 200ms ease;
-	transition: all 200ms ease;
-}
-.footer_blog_title a:hover
-{
-	color: #bbe432;
-}
-.footer_blog_date
-{
-	font-family: 'Poppins', sans-serif;
-	font-size: 12px;
-	font-weight: 400;
-	text-transform: uppercase;
-	color: #8f8f8f;
-	margin-top: 4px;
-}
-.footer_blog_link
-{
-	margin-top: 9px;
-}
-.footer_blog_link a
-{
-	font-size: 12px;
-	font-weight: 500;
-	color: #bbe432;
-}
+
 .footer_contact
 {
 	margin-top: 8px;

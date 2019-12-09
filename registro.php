@@ -91,7 +91,7 @@ if(isset($_POST["submit"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
 	}else{
 		$ext = pathinfo($_FILES["imagen"]["name"], PATHINFO_EXTENSION);
 		if($ext != "jpg" && $ext != "jpeg" && $ext != "png"){
-			$errores[] = "La extension no es requerida";
+			$errores[] = "La extension no es correcta";
 		}
 	}
 
@@ -100,7 +100,19 @@ if(isset($_POST["submit"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
 ?>
 
 <ul> <!-- LISTO LOS ERRORES -->
-<?php if(isset($errores)){
+<?php
+
+if(isset($_POST['submit'])){
+	$db= file_get_contents('usuarios.json');
+	$usuarios = json_decode($db,true); 
+	$mail =$_POST["email"];
+	$chequeomail=array_search($mail ,array_column($usuarios,"email"));
+	if ($chequeomail){
+		$errores[] = "El email ya existe";
+		}
+	}
+	
+if(isset($errores)&&isset($_POST['submit'])){
     foreach ($errores as $error){
         //echo "<li> $error </li>";
         //SI HAY ERROES LOS MUESTRO EN UN ALERT
@@ -111,7 +123,8 @@ if(isset($_POST["submit"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
 	}
 	else{
 	// Si el array $errores está vacío y existen datos en $_POST, se aceptan los datos y se cargan en el JSON
-	if($_POST&&empty($errores)){
+
+	if(empty($errores)&&isset($_POST['submit'])){
 		$db= file_get_contents('usuarios.json');
 		$usuarios = json_decode($db,true); 
 		$usuarios[]= [
@@ -124,14 +137,21 @@ if(isset($_POST["submit"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
 			//"password" => password_hash($_POST['password'],PASSWORD_DEFAULT)
 			"password" => md5($_POST['password'])
 			
+			
 		];
 		
 		
 		$db= json_encode($usuarios);
 		file_put_contents('usuarios.json',$db);
 
-	}if($_FILES){
-		move_uploaded_file($_FILES["imagen"]["tmp_name"], "archivos/imagen.". $ext);
+
+		$url="login.php";
+		header("Location:$url");
+
+	}
+	if($_FILES){
+		$random=rand(1,999999);
+		move_uploaded_file($_FILES["imagen"]["tmp_name"], "archivos/imagen.".$random.".".$ext);
 
 	}
 }

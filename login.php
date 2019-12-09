@@ -18,7 +18,7 @@
 <body>
 
 <?php
-
+session_start();
 
 
 function verificar(){
@@ -34,6 +34,10 @@ function verificar(){
 				echo'<script type="text/javascript">
 				alert("Bienvenido");
 				</script>';
+				$_SESSION["email"] = $_POST["email"];
+				$url="index.php";
+				header("Location:$url");
+				//aca tiene q crear sesion y pasar al home
 				}else{
 					echo'<script type="text/javascript">
 				alert("Contraseña incorrecta");
@@ -75,7 +79,7 @@ function verificar(){
 				<ul class="d-flex flex-row align-items-center justify-content-start">
 					<li><a href="index.html">Inicio</a></li>
 					<li><a href="productos.html">Productos</a></li>
-					<li><a href="login.html">Login</a></li>
+					<li><a href="login.php">Login</a></li>
 					<li><a href="perfil.html">Mi Perfil</a></li> <!-- Esto va a ocultarse cuando la sesion no este iniciada -->
 					<li><a href="f.a.q..html">F.A.Q.</a></li>
 					<li><a href="contacto.html">Contactanos!</a></li>
@@ -140,7 +144,7 @@ function verificar(){
 				<li class="menu_mm"><a href="index.html">Inicio</a></li>
 				<li class="menu_mm"><a href="productos.html">Productos</a></li>
 				<li class="menu_mm"><a href="perfil.html">Mi Perfil</a></li> <!-- Esto va a ocultarse cuando la sesion no este iniciada -->
-				<li class="menu_mm"><a href="login.html">Login</a></li>
+				<li class="menu_mm"><a href="login.php">Login</a></li>
 				<li class="menu_mm"><a href="f.a.q..html">F.A.Q.</a></li>
 				<li class="menu_mm"><a href="contacto.html">Contactanos!</a></li>
 			</ul>
@@ -194,7 +198,7 @@ function verificar(){
 				<li><a href="index.html">Inicio<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
 				<li><a href="productos.html">Productos<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
 				<li><a href="perfil.html">Mi Perfil<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-				<li><a href="login.html">Login<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="login.php">Login<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
 				<li><a href="f.a.q..html">F.A.Q.<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
 				<li><a href="contacto.html">Contactanos!<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
 			</ul>

@@ -17,6 +17,44 @@
 </head>
 <body>
 
+<?php
+
+
+
+function verificar(){
+	$db= file_get_contents('usuarios.json');
+	$usuarios = json_decode($db,true); 
+	$password =md5($_POST['password']);
+	$mail =$_POST["email"];
+	
+	$chequeomail=array_search($mail ,array_column($usuarios,"email"));
+	if ($chequeomail){
+		$chequeopass=array_search($password ,array_column($usuarios,"password"));
+			if($chequeopass){
+				echo'<script type="text/javascript">
+				alert("Bienvenido");
+				</script>';
+				}else{
+					echo'<script type="text/javascript">
+				alert("Contraseña incorrecta");
+				</script>';
+						}
+			} else {
+					echo'<script type="text/javascript">
+					alert("Usuario incorrecto");
+					</script>';
+					}
+				} 
+ 
+ 
+ if(isset($_POST['submit']))
+{
+   verificar();
+} 
+ 
+
+?>
+
 <div class="super_container">
 
 	<!-- Header -->
@@ -195,20 +233,20 @@
 							<div class="billing checkout_box">
 									<div class="home_title">Iniciar Sesión<i class="fas fa-street-view"></i></div>
 								<br>
-									<form>
+									<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
 											<div class="form-group">
 											  <label for="exampleInputEmail1">Dirección de correo electrónico</label>
-											  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="E-mail">
+											  <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="E-mail" value="<?php echo ((isset($_POST["email"])) ? (htmlspecialchars($_POST["email"], ENT_QUOTES)) : ("")); ?>">
 											  <small id="emailHelp" class="form-text text-muted">Nunca compartiremos su correo electrónico con nadie más.</small>
 											</div>
 											<div class="form-group">
 											  <label for="exampleInputPassword1">Contraseña</label>
-											  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
+											  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña" name="password">
 											  No posee una cuenta? <a href="registro.php">Registrese Aquí</a>
 											</div>
 
 											
-											<button type="button" class="btn btn-success">Entrar</button>
+											<button type="submit" id="boton" name="submit" value="Enviar" class="btn btn-success">Entrar</button>
 										  </form>
 
 
@@ -338,5 +376,12 @@
 	<script src="plugins/Isotope/isotope.pkgd.min.js"></script>
 	<script src="plugins/Isotope/fitcolumns.js"></script>
 	<script src="js/custom.js"></script>
+	<script>
+	
+		document.getElementById('boton').addEventListener("load", function(e){
+        e.preventDefault();
+		});
+		
+	</script>
 	</body>
 	</html>

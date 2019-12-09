@@ -121,7 +121,8 @@ if(isset($_POST["submit"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
 			"direccion"=>$_POST['direccion'],
 			"ciudad"=>$_POST['ciudad'],
 			"pais"=>$_POST['pais'],
-			"password" => password_hash($_POST['password'],PASSWORD_DEFAULT)
+			//"password" => password_hash($_POST['password'],PASSWORD_DEFAULT)
+			"password" => md5($_POST['password'])
 			
 		];
 		

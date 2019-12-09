@@ -77,7 +77,7 @@ session_start();
 	
 					<!-- Cart -->
 					<div class="cart d-flex flex-row align-items-center justify-content-start">
-						<div class="cart_icon"><a href="carrito.html">
+						<div class="cart_icon"><a href="carrito.php">
 							<img src="images/bag.png" alt="">
 							<div class="cart_num">2</div>
 						</a></div>
@@ -178,15 +178,14 @@ session_start();
 	
 			<!-- Logo -->
 			<div class="sidebar_logo">
-				<a href="#"><div>Pet<span>Shop</span></div></a>
+				<a href="index.php"><div>Pet<span>Shop</span></div></a>
 			</div>
 	
 			<!-- Sidebar Navigation -->
 			<nav class="sidebar_nav">
 			<ul>
 				<li><a href="index.php">Inicio<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-				<li><a href="productos.php">Productos<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-				
+				<li><a href="productos.php">Productos<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>				
 				<li><a href="login.php">Login<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
 				<li><a href="f.a.q..php">F.A.Q.<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
                 <li><a href="contacto.php">Contactanos!<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
@@ -205,7 +204,7 @@ session_start();
 	
 			<!-- Cart -->
 			<div class="cart d-flex flex-row align-items-center justify-content-start">
-				<div class="cart_icon"><a href="carrito.html">
+				<div class="cart_icon"><a href="carrito.php">
 					<img src="images/bag.png" alt="">
 					<div class="cart_num">2</div>
 				</a></div>
@@ -223,7 +222,7 @@ session_start();
 				<div class="breadcrumbs">
 					<ul class="d-flex flex-row align-items-center justify-content-start">
 						<li><a href="index.php">Home</a></li>
-						<li><a href="carrito.html">Carrito</a></li>
+						<li><a href="carrito.php">Carrito</a></li>
 					</ul>
 				</div>
 			</div>
@@ -257,7 +256,7 @@ session_start();
 									<li class="cart_item item_list d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
 										<div class="product d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
 											<div><div class="product_image"><img src="images/pro5.jpg" alt=""></div></div>
-											<div class="product_name"><a href="producto.html">JUGUETE PARA GATO GIGWI PET DROID 15 X 8 X 7.5 CM</a></div>
+											<div class="product_name"><a href="producto.php">JUGUETE PARA GATO GIGWI PET DROID 15 X 8 X 7.5 CM</a></div>
 										</div>
 										<div class="product_price text-lg-center product_text"><span>Precio: </span>$2.040,00</div>
 										<div class="product_quantity_container">
@@ -275,7 +274,7 @@ session_start();
 							<!-- Cart Buttons -->
 							<div class="cart_buttons d-flex flex-row align-items-start justify-content-start">
 								<div class="cart_buttons_inner ml-auto d-flex flex-row align-items-start justify-content-start flex-wrap">
-									<div class="button button_continue trans_200"><a href="productos.html">Continuar compra</a></div>
+									<div class="button button_continue trans_200"><a href="productos.php">Continuar compra</a></div>
 									<div class="button button_clear trans_200"><a href="#">limpiar carrito</a></div>
 									<div class="button button_update trans_200"><a href="#">Finalizar compra</a></div>
 								</div>
@@ -353,7 +352,7 @@ session_start();
 										<div class="cart_extra_total_value ml-auto">$2.040,00</div>
 									</li>
 								</ul>
-								<div class="checkout_button trans_200"><a href="#">pagar</a></div>
+								<div class="checkout_button trans_200"><a href="#">Pagar</a></div>
 							</div>
 						</div>
 					</div>
@@ -361,10 +360,6 @@ session_start();
 			</div>
 		</div>
 	</div>
-
-	<!-- Newsletter -->
-
-	
 
 	<!-- Footer -->
 
@@ -379,7 +374,7 @@ session_start();
 								<div class="footer_about">
 									<!-- Logo -->
 									<div class="footer_logo">
-										<a href="#"><div>pet<span>shop</span></div></a>
+										<a href="index.php"><div>pet<span>shop</span></div></a>
 									</div>
 									<div class="footer_about_text">
 										<p>Nuestro amor por los animales nos llevó a iniciar este negocio para poder brindarles excelencia y calidad, y sobre todo, el mejor cuidado para nuestros compañeros</p>

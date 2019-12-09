@@ -178,18 +178,18 @@ if(isset($errores)&&isset($_POST['submit'])){
 
 			<!-- Logo -->
 			<div class="header_logo">
-				<a href="#"><div>pet<span>Shop</span></div></a>
+				<a href="index.php"><div>pet<span>Shop</span></div></a>
 			</div>
 
 			<!-- Navigation -->
 			<nav class="header_nav">
 				<ul class="d-flex flex-row align-items-center justify-content-start">
-					<li><a href="index.html">Inicio</a></li>
-					<li><a href="productos.html">Productos</a></li>
-					<li><a href="login.html">Login</a></li>
-					<li><a href="perfil.html">Mi Perfil</a></li> <!-- Esto va a ocultarse cuando la sesion no este iniciada -->
-					<li><a href="f.a.q..html">F.A.Q.</a></li>
-					<li><a href="contacto.html">Contactanos!</a></li>
+					<li><a href="index.php">Inicio</a></li>
+					<li><a href="productos.php">Productos</a></li>
+					<li><a href="login.php">Login</a></li>
+					<li><a href="perfil.php">Mi Perfil</a></li> <!-- Esto va a ocultarse cuando la sesion no este iniciada -->
+					<li><a href="f.a.q..php">F.A.Q.</a></li>
+					<li><a href="contacto.php">Contactanos!</a></li>
 				</ul>
 			</nav>
 
@@ -214,7 +214,7 @@ if(isset($errores)&&isset($_POST['submit'])){
 
 				<!-- Cart -->
 				<div class="cart d-flex flex-row align-items-center justify-content-start">
-					<div class="cart_icon"><a href="cart.html">
+					<div class="cart_icon"><a href="carrito.php">
 						<img src="images/bag.png" alt="">
 						<div class="cart_num">2</div>
 					</a></div>
@@ -258,12 +258,12 @@ if(isset($errores)&&isset($_POST['submit'])){
 		</div>
 		<nav class="menu_nav">
 			<ul class="menu_mm">
-				<li class="menu_mm"><a href="index.html">Inicio</a></li>
-				<li class="menu_mm"><a href="productos.html">Productos</a></li>
-				<li class="menu_mm"><a href="perfil.html">Mi Perfil</a></li> <!-- Esto va a ocultarse cuando la sesion no este iniciada -->
-				<li class="menu_mm"><a href="login.html">Login</a></li>
-				<li class="menu_mm"><a href="f.a.q..html">F.A.Q.</a></li>
-				<li class="menu_mm"><a href="contacto.html">Contactanos!</a></li>
+				<li class="menu_mm"><a href="index.php">Inicio</a></li>
+				<li class="menu_mm"><a href="productos.php">Productos</a></li>
+				<li class="menu_mm"><a href="perfil.php">Mi Perfil</a></li> <!-- Esto va a ocultarse cuando la sesion no este iniciada -->
+				<li class="menu_mm"><a href="login.php">Login</a></li>
+				<li class="menu_mm"><a href="f.a.q..php">F.A.Q.</a></li>
+				<li class="menu_mm"><a href="contacto.php">Contactanos!</a></li>
 			</ul>
 		</nav>
 		<div class="menu_extra">
@@ -306,24 +306,24 @@ if(isset($errores)&&isset($_POST['submit'])){
 
 		<!-- Logo -->
 		<div class="sidebar_logo">
-			<a href="#"><div>Pet<span>Shop</span></div></a>
+			<a href="index.php"><div>Pet<span>Shop</span></div></a>
 		</div>
 
 		<!-- Sidebar Navigation -->
 		<nav class="sidebar_nav">
 			<ul>
-				<li><a href="index.html">Inicio<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-				<li><a href="productos.html">Productos<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-				<li><a href="perfil.html">Mi Perfil<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-				<li><a href="login.html">Login<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-				<li><a href="f.a.q..html">F.A.Q.<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-				<li><a href="contacto.html">Contactanos!<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="index.php">Inicio<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="productos.php">Productos<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="perfil.php">Mi Perfil<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="login.php">Login<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="f.a.q..php">F.A.Q.<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="contacto.php">Contactanos!<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
 			</ul>
 		</nav>
 
 		<!-- Cart -->
 		<div class="cart d-flex flex-row align-items-center justify-content-start">
-			<div class="cart_icon"><a href="cart.html">
+			<div class="cart_icon"><a href="carrito.php">
 				<img src="images/bag.png" alt="">
 				<div class="cart_num">2</div>
 			</a></div>
@@ -441,7 +441,7 @@ if(isset($errores)&&isset($_POST['submit'])){
 							<div class="footer_about">
 								<!-- Logo -->
 								<div class="footer_logo">
-									<a href="#"><div>pet<span>shop</span></div></a>
+									<a href="indexphp"><div>pet<span>shop</span></div></a>
 								</div>
 								<div class="footer_about_text">
 									<p>Nuestro amor por los animales nos llevó a iniciar este negocio para poder brindarles excelencia y calidad, y sobre todo, el mejor cuidado para nuestros compañeros</p>

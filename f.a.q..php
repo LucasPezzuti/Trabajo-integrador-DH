@@ -38,10 +38,10 @@ session_start();
 		<nav class="header_nav">
 				<ul class="d-flex flex-row align-items-center justify-content-start">
 					<li><a href="index.php">Home</a></li>
-					<li><a href="productos.html">productos</a></li>
+					<li><a href="productos.php">productos</a></li>
 					<li><a href="login.php">login</a></li>
-					<li><a href="f.a.q..html">F.A.Q.</a></li>
-					<li><a href="contacto.html">Contactanos!</a></li>
+					<li><a href="f.a.q..php">F.A.Q.</a></li>
+					<li><a href="contacto.php">Contactanos!</a></li>
 				</ul>
 			</nav>
 
@@ -64,7 +64,7 @@ session_start();
 
 				<!-- Cart -->
 				<div class="cart d-flex flex-row align-items-center justify-content-start">
-					<div class="cart_icon"><a href="carrito.html">
+					<div class="cart_icon"><a href="carrito.php">
 						<img src="images/bag.png" alt="">
 						<div class="cart_num">2</div>
 					</a></div>
@@ -107,10 +107,10 @@ session_start();
 			<nav class="menu_nav">
 				<ul class="menu_mm">
 					<li class="menu_mm"><a href="index.php">home</a></li>
-					<li class="menu_mm"><a href="productos.html">productos</a></li>
+					<li class="menu_mm"><a href="productos.php">productos</a></li>
 					<li class="menu_mm"><a href="login.php">login</a></li>
-					<li class="menu_mm"><a href="f.a.q..html">F.A.Q.</a></li>
-					<li class="menu_mm"><a href="contacto.html">Contactanos!</a></li>
+					<li class="menu_mm"><a href="f.a.q..php">F.A.Q.</a></li>
+					<li class="menu_mm"><a href="contacto.php">Contactanos!</a></li>
 				</ul>
 			</nav>
 			<div class="menu_extra">
@@ -150,23 +150,23 @@ session_start();
 
 		<!-- Logo -->
 		<div class="sidebar_logo">
-				<a href="#"><div>Pet<span>Shop</span></div></a>
+				<a href="index.php"><div>Pet<span>Shop</span></div></a>
 			</div>
 	
 			<!-- Sidebar Navigation -->
 			<nav class="sidebar_nav">
 				<ul>
 					<li><a href="index.php">home<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-					<li><a href="productos.html">productos<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+					<li><a href="productos.php">productos<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
 					<li><a href="login.php">login<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-					<li><a href="f.a.q..html">F.A.Q.<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-					<li><a href="contacto.html">Contactanos!<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+					<li><a href="f.a.q..php">F.A.Q.<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+					<li><a href="contacto.php">Contactanos!<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
 				</ul>
 			</nav>
 	
 			<!-- Cart -->
 			<div class="cart d-flex flex-row align-items-center justify-content-start">
-				<div class="cart_icon"><a href="carrito.html">
+				<div class="cart_icon"><a href="carrito.php">
 					<img src="images/bag.png" alt="">
 					<div class="cart_num">2</div>
 				</a></div>
@@ -185,7 +185,7 @@ session_start();
 				<div class="breadcrumbs">
 					<ul class="d-flex flex-row align-items-center justify-content-start">
 						<li><a href="index.php">Home</a></li>
-						<li><a href="f.a.q..html">F.A.Q.</a></li>
+						<li><a href="f.a.q..php">F.A.Q.</a></li>
 					</ul>
 				</div>
 			</div>
@@ -212,7 +212,7 @@ session_start();
 									<div class="blog_post_info d-flex flex-row align-items-start justify-content-start">
 									<div class="blog_post_text">
 										<p>1- Elige el producto que deseas comprar.Haz clic en el botón de "Agregar".</p>
-										<p>2- Se agregará el producto a tu carrito y te llevará al mismo.</p>
+										<p>2- Se agregará el producto a tu carrito</p>
 										<p>3- Puedes seguir agregando otros productos al carrito o sino haz clic en "Procesar pedido".</p>
 										<p>4- Completa tus datos de contacto y haz clic en "Continuar".</p>
 										<p>5- Ingresa la dirección a donde deseas recibir el producto. Luego haz clic en "Continuar".</p>
@@ -277,7 +277,7 @@ session_start();
 							<div class="footer_about">
 								<!-- Logo -->
 								<div class="footer_logo">
-									<a href="#"><div>pet<span>shop</span></div></a>
+									<a href="index.php"><div>pet<span>shop</span></div></a>
 								</div>
 								<div class="footer_about_text">
 									<p>Nuestro amor por los animales nos llevó a iniciar este negocio para poder brindarles excelencia y calidad, y sobre todo, el mejor cuidado para nuestros compañeros</p>
@@ -293,7 +293,6 @@ session_start();
 								</div>
 							</div>
 						</div>
-
 
 						<!-- Contacto -->
 						<div class="col-xxl-3 col-md-6 footer_col">

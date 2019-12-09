@@ -31,17 +31,17 @@ session_start();
 
 			<!-- Logo -->
 			<div class="header_logo">
-				<a href="#"><div>pet<span>shop</span></div></a>
+				<a href="index.php"><div>pet<span>shop</span></div></a>
 			</div>
 
 			<!-- Navegacion -->
 			<nav class="header_nav">
 				<ul class="d-flex flex-row align-items-center justify-content-start">
 					<li><a href="index.php">Home</a></li>
-					<li><a href="productos.html">productos</a></li>
-					<li><a href="login.html">login</a></li>
-					<li><a href="f.a.q..html">F.A.Q.</a></li>
-					<li><a href="contacto.html">Contactanos!</a></li>
+					<li><a href="productos.php">productos</a></li>
+					<li><a href="login.php">login</a></li>
+					<li><a href="f.a.q..php">F.A.Q.</a></li>
+					<li><a href="contacto.php">Contactanos!</a></li>
 				</ul>
 			</nav>
 			<!-- Extra -->
@@ -100,10 +100,10 @@ session_start();
 		<nav class="menu_nav">
 			<ul class="menu_mm">
 				<li class="menu_mm"><a href="index.php">home</a></li>
-				<li class="menu_mm"><a href="productos.html">productos</a></li>
-				<li class="menu_mm"><a href="login.html">login</a></li>
-				<li class="menu_mm"><a href="f.a.q..html">F.A.Q.</a></li>
-				<li class="menu_mm"><a href="contacto.html">Contactanos!</a></li>
+				<li class="menu_mm"><a href="productos.php">productos</a></li>
+				<li class="menu_mm"><a href="login.php">login</a></li>
+				<li class="menu_mm"><a href="f.a.q..php">F.A.Q.</a></li>
+				<li class="menu_mm"><a href="contacto.php">Contactanos!</a></li>
 			</ul>
 		</nav>
 		<div class="menu_extra">
@@ -146,23 +146,23 @@ session_start();
 
 		<!-- Logo -->
 		<div class="sidebar_logo">
-			<a href="#"><div>Pet<span>Shop</span></div></a>
+			<a href="index.php"><div>Pet<span>Shop</span></div></a>
 		</div>
 
 		<!-- Navegacion lateral -->
 		<nav class="sidebar_nav">
 			<ul>
 				<li><a href="index.php">home<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-				<li><a href="productos.html">productos<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-				<li><a href="login.html">login<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-				<li><a href="f.a.q..html">F.A.Q.<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-				<li><a href="contacto.html">Contactanos!<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="productos.php">productos<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="login.php">login<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="f.a.q..php">F.A.Q.<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="contacto.php">Contactanos!<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
 			</ul>
 		</nav>
 
 		<!-- Carrito -->
 		<div class="cart d-flex flex-row align-items-center justify-content-start">
-			<div class="cart_icon"><a href="carrito.html">
+			<div class="cart_icon"><a href="carrito.php">
 				<img src="images/bag.png" alt="">
 				<div class="cart_num">1</div>
 			</a></div>
@@ -181,8 +181,8 @@ session_start();
 				<div class="breadcrumbs">
 					<ul class="d-flex flex-row align-items-center justify-content-start">
 						<li><a href="index.php">Home</a></li>
-						<li><a href="productos.html">Productos</a></li>
-						<li><a href="productos.html">Gatos</a></li>
+						<li><a href="productos.php">Productos</a></li>
+						<li><a href="productos.php">Gatos</a></li>
 					</ul>
 				</div>
 			</div>
@@ -202,11 +202,11 @@ session_start();
 							<div class="products_bar_content d-flex flex-column flex-xxl-row align-items-start align-items-xxl-center justify-content-start">
 								<div class="product_categories">
 									<ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
-										<li><a href="productos.html">Todos</a></li>
-										<li><a href="productos_perro.html">Perros</a></li>
-										<li class="active"><a href="productos_gatos.html">Gatos</a></li>
-										<li><a href="productos_roedores.html">Roedores</a></li>
-										<li><a href="productos_varios.html">Articulos varios</a></li>
+										<li><a href="productos.php">Todos</a></li>
+										<li><a href="productos_perro.php">Perros</a></li>
+										<li class="active"><a href="productos_gatos.php">Gatos</a></li>
+										<li><a href="productos_roedores.php">Roedores</a></li>
+										<li><a href="productos_varios.php">Articulos varios</a></li>
 									</ul>
 								</div>
 								<div class="products_bar_side ml-xxl-auto d-flex flex-row align-items-center justify-content-start">
@@ -481,7 +481,7 @@ session_start();
 						<div class="footer_about">
 							<!-- Logo -->
 							<div class="footer_logo">
-								<a href="#"><div>Pet<span>Shop</span></div></a>
+								<a href="index.php"><div>Pet<span>Shop</span></div></a>
 							</div>
 							<div class="footer_about_text">
 								<p>Nuestro amor por los animales nos llevó a iniciar este negocio para poder brindarles excelencia y calidad, y sobre todo, el mejor cuidado para nuestros compañeros</p>

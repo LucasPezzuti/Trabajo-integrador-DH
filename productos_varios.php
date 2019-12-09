@@ -14,6 +14,9 @@
 <link rel="stylesheet" type="text/css" href="styles/categories.css">
 <link rel="stylesheet" type="text/css" href="styles/categories_responsive.css">
 </head>
+<?php 
+session_start();
+?>
 <body>
 
 <div class="super_container">
@@ -28,15 +31,15 @@
 
 			<!-- Logo -->
 			<div class="header_logo">
-				<a href="index.html"><div>pet<span>shop</span></div></a>
+				<a href="#"><div>pet<span>shop</span></div></a>
 			</div>
 
 			<!-- Navegacion -->
 			<nav class="header_nav">
 				<ul class="d-flex flex-row align-items-center justify-content-start">
-					<li><a href="index.html">Home</a></li>
+					<li><a href="index.php">Home</a></li>
 					<li><a href="productos.html">productos</a></li>
-					<li><a href="login.php">login</a></li>
+					<li><a href="login.html">login</a></li>
 					<li><a href="f.a.q..html">F.A.Q.</a></li>
 					<li><a href="contacto.html">Contactanos!</a></li>
 				</ul>
@@ -96,9 +99,9 @@
 		<br>
 		<nav class="menu_nav">
 			<ul class="menu_mm">
-				<li class="menu_mm"><a href="index.html">home</a></li>
+				<li class="menu_mm"><a href="index.php">home</a></li>
 				<li class="menu_mm"><a href="productos.html">productos</a></li>
-				<li class="menu_mm"><a href="login.php">login</a></li>
+				<li class="menu_mm"><a href="login.html">login</a></li>
 				<li class="menu_mm"><a href="f.a.q..html">F.A.Q.</a></li>
 				<li class="menu_mm"><a href="contacto.html">Contactanos!</a></li>
 			</ul>
@@ -149,9 +152,9 @@
 		<!-- Navegacion lateral -->
 		<nav class="sidebar_nav">
 			<ul>
-				<li><a href="index.html">home<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="index.php">home<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
 				<li><a href="productos.html">productos<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-				<li><a href="login.php">login<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="login.html">login<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
 				<li><a href="f.a.q..html">F.A.Q.<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
 				<li><a href="contacto.html">Contactanos!<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
 			</ul>
@@ -171,15 +174,15 @@
 	<!-- Home -->
 
 	<div class="home">
-		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="images/productos_head.jpg" data-speed="0.8"></div>
+		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="images/productos_head_varios.jpg" data-speed="0.8"></div>
 		<div class="home_container">
 			<div class="home_content">
 				<div class="home_title">Pet Shop</div>
 				<div class="breadcrumbs">
 					<ul class="d-flex flex-row align-items-center justify-content-start">
-						<li><a href="index.html">Home</a></li>
+						<li><a href="index.php">Home</a></li>
 						<li><a href="productos.html">Productos</a></li>
-						<li><a href="productos.html">Todos</a></li>
+						<li><a href="productos.html">Varios</a></li>
 					</ul>
 				</div>
 			</div>
@@ -199,11 +202,11 @@
 							<div class="products_bar_content d-flex flex-column flex-xxl-row align-items-start align-items-xxl-center justify-content-start">
 								<div class="product_categories">
 									<ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
-										<li class="active"><a href="productos.html">Todos</a></li>
+										<li><a href="productos.html">Todos</a></li>
 										<li><a href="productos_perro.html">Perros</a></li>
 										<li><a href="productos_gatos.html">Gatos</a></li>
 										<li><a href="productos_roedores.html">Roedores</a></li>
-										<li><a href="productos_varios.html">Articulos varios</a></li>
+										<li class="active"><a href="productos_varios.html">Articulos varios</a></li>
 									</ul>
 								</div>
 								<div class="products_bar_side ml-xxl-auto d-flex flex-row align-items-center justify-content-start">

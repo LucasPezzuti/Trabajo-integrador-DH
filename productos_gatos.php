@@ -14,6 +14,9 @@
 <link rel="stylesheet" type="text/css" href="styles/categories.css">
 <link rel="stylesheet" type="text/css" href="styles/categories_responsive.css">
 </head>
+<?php 
+session_start();
+?>
 <body>
 
 <div class="super_container">
@@ -34,7 +37,7 @@
 			<!-- Navegacion -->
 			<nav class="header_nav">
 				<ul class="d-flex flex-row align-items-center justify-content-start">
-					<li><a href="index.html">Home</a></li>
+					<li><a href="index.php">Home</a></li>
 					<li><a href="productos.html">productos</a></li>
 					<li><a href="login.html">login</a></li>
 					<li><a href="f.a.q..html">F.A.Q.</a></li>
@@ -96,7 +99,7 @@
 		<br>
 		<nav class="menu_nav">
 			<ul class="menu_mm">
-				<li class="menu_mm"><a href="index.html">home</a></li>
+				<li class="menu_mm"><a href="index.php">home</a></li>
 				<li class="menu_mm"><a href="productos.html">productos</a></li>
 				<li class="menu_mm"><a href="login.html">login</a></li>
 				<li class="menu_mm"><a href="f.a.q..html">F.A.Q.</a></li>
@@ -149,7 +152,7 @@
 		<!-- Navegacion lateral -->
 		<nav class="sidebar_nav">
 			<ul>
-				<li><a href="index.html">home<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="index.php">home<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
 				<li><a href="productos.html">productos<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
 				<li><a href="login.html">login<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
 				<li><a href="f.a.q..html">F.A.Q.<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
@@ -177,7 +180,7 @@
 				<div class="home_title">Pet Shop</div>
 				<div class="breadcrumbs">
 					<ul class="d-flex flex-row align-items-center justify-content-start">
-						<li><a href="index.html">Home</a></li>
+						<li><a href="index.php">Home</a></li>
 						<li><a href="productos.html">Productos</a></li>
 						<li><a href="productos.html">Gatos</a></li>
 					</ul>

@@ -31,6 +31,9 @@ if(isset($error))
 
 <script src="https://kit.fontawesome.com/0d91f8e901.js" crossorigin="anonymous"></script>
 </head>
+<?php 
+session_start();
+?>
 <body>
 
 

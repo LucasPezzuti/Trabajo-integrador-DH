@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title> F.A.Q. | Pet Shop</title>
+<title> Iniciar sesión | Pet shop</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="aStar Fashion Template Project">
@@ -11,9 +11,13 @@
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
-<link rel="stylesheet" type="text/css" href="styles/blog.css">
-<link rel="stylesheet" type="text/css" href="styles/blog_responsive.css">
+<link rel="stylesheet" type="text/css" href="styles/checkout.css">
+<link rel="stylesheet" type="text/css" href="styles/checkout_responsive.css">
+<script src="https://kit.fontawesome.com/0d91f8e901.js" crossorigin="anonymous"></script>
 </head>
+<?php 
+session_start();
+?>
 <body>
 
 <div class="super_container">
@@ -28,15 +32,15 @@
 
 			<!-- Logo -->
 			<div class="header_logo">
-				<a href="index.html"><div>pet<span>shop</span></div></a>
+				<a href="index.php"><div>pet<span>Shop</span></div></a>
 			</div>
 
-		<!-- Navigation -->
-		<nav class="header_nav">
+			<!-- Navigation -->
+			<nav class="header_nav">
 				<ul class="d-flex flex-row align-items-center justify-content-start">
-					<li><a href="index.html">Home</a></li>
+					<li><a href="index.php">Home</a></li>
 					<li><a href="productos.html">productos</a></li>
-					<li><a href="login.php">login</a></li>
+					<li><a href="login.php">login</a></li>					
 					<li><a href="f.a.q..html">F.A.Q.</a></li>
 					<li><a href="contacto.html">Contactanos!</a></li>
 				</ul>
@@ -45,19 +49,21 @@
 			<!-- Header Extra -->
 			<div class="header_extra ml-auto d-flex flex-row align-items-center justify-content-start">
 
+				
+
 				<!-- Currency -->
 				<div class="info_currencies has_children">
-						<div class="dropdown_text">ARS</div>
-						<div class="dropdown_arrow"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
-	
-						<!-- Currencies Dropdown Menu -->
-						 <ul>
-							 <li><a href="#"><div class="dropdown_text">USD</div></a></li>
-							 <li><a href="#"><div class="dropdown_text">EUR</div></a></li>
-							 <li><a href="#"><div class="dropdown_text">REAL</div></a></li>
-						 </ul>
-	
-					</div>
+					<div class="dropdown_text">ARS</div>
+					<div class="dropdown_arrow"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
+
+					<!-- Currencies Dropdown Menu -->
+					 <ul>
+					 	<li><a href="#"><div class="dropdown_text">USD</div></a></li>
+					 	<li><a href="#"><div class="dropdown_text">EUR</div></a></li>
+					 	<li><a href="#"><div class="dropdown_text">REAL</div></a></li>
+					 </ul>
+
+				</div>
 
 				<!-- Cart -->
 				<div class="cart d-flex flex-row align-items-center justify-content-start">
@@ -78,49 +84,52 @@
 		<div class="menu_close_container"><div class="menu_close"><div></div><div></div></div></div>
 		<div class="menu_top d-flex flex-row align-items-center justify-content-start">
 
+			
+
 			<!-- Currency -->
 			<div class="info_currencies has_children">
-					<div class="dropdown_text">ARS</div>
-					<div class="dropdown_arrow"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
-	
-					<!-- Currencies Dropdown Menu -->
-					 <ul>
-						 <li><a href="#"><div class="dropdown_text">USD</div></a></li>
-						 <li><a href="#"><div class="dropdown_text">EUR</div></a></li>
-						 <li><a href="#"><div class="dropdown_text">REAL</div></a></li>
-					 </ul>
-	
-				</div>
+				<div class="dropdown_text">ARS</div>
+				<div class="dropdown_arrow"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
+
+				<!-- Currencies Dropdown Menu -->
+				 <ul>
+					 <li><a href="#"><div class="dropdown_text">USD</div></a></li>
+					 <li><a href="#"><div class="dropdown_text">EUR</div></a></li>
+					 <li><a href="#"><div class="dropdown_text">REAL</div></a></li>
+				 </ul>
+
+			</div>
 
 		</div>
 		<div class="menu_search">
-				<form action="#" class="header_search_form menu_mm">
-					<input type="search" class="search_input menu_mm" placeholder="Search" required="required">
-					<button class="header_search_button d-flex flex-column align-items-center justify-content-center menu_mm">
-						<i class="fa fa-search menu_mm" aria-hidden="true"></i>
-					</button>
-				</form>
-			</div>
-			<nav class="menu_nav">
-				<ul class="menu_mm">
-					<li class="menu_mm"><a href="index.html">home</a></li>
-					<li class="menu_mm"><a href="productos.html">productos</a></li>
-					<li class="menu_mm"><a href="login.php">login</a></li>
-					<li class="menu_mm"><a href="f.a.q..html">F.A.Q.</a></li>
-					<li class="menu_mm"><a href="contacto.html">Contactanos!</a></li>
+			<form action="#" class="header_search_form menu_mm">
+				<input type="search" class="search_input menu_mm" placeholder="Search" required="required">
+				<button class="header_search_button d-flex flex-column align-items-center justify-content-center menu_mm">
+					<i class="fa fa-search menu_mm" aria-hidden="true"></i>
+				</button>
+			</form>
+		</div>
+		<nav class="menu_nav">
+			<ul class="menu_mm">
+				<li class="menu_mm"><a href="index.php">home</a></li>
+				<li class="menu_mm"><a href="productos.html">productos</a></li>
+				<li class="menu_mm"><a href="login.php">login</a></li>			
+				<li class="menu_mm"><a href="f.a.q..html">F.A.Q.</a></li>
+				<li class="menu_mm"><a href="contacto.html">Contactanos!</a></li>
+			</ul>
+		</nav>
+		<div class="menu_extra">
+			<div class="menu_social">
+				<ul>
+					<li><a href="https://ar.pinterest.com/"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+					<li><a href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+					<li><a href="https://www.instagram.com/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+					<li><a href="https://twitter.com/?lang=es"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
 				</ul>
-			</nav>
-			<div class="menu_extra">
-				<div class="menu_social">
-					<ul>
-						<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-						<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-						<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-						<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-					</ul>
-				</div>
 			</div>
 		</div>
+	</div>
+	
 	<!-- Sidebar -->
 
 	<div class="sidebar">
@@ -128,138 +137,100 @@
 		<!-- Info -->
 		<div class="info">
 			<div class="info_content d-flex flex-row align-items-center justify-content-start">
+				
+				
 				<!-- Currency -->
 				<div class="info_currencies has_children">
-						<div class="dropdown_text">ARS</div>
-						<div class="dropdown_arrow"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
-	
-						<!-- Currencies Dropdown Menu -->
-						 <ul>
-							 <li><a href="#"><div class="dropdown_text">USD</div></a></li>
-							 <li><a href="#"><div class="dropdown_text">EUR</div></a></li>
-							 <li><a href="#"><div class="dropdown_text">REAL</div></a></li>
-						 </ul>
-	
-					</div>
+					<div class="dropdown_text">ARS</div>
+					<div class="dropdown_arrow"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
+
+					<!-- Currencies Dropdown Menu -->
+					 <ul>
+					 	<li><a href="#"><div class="dropdown_text">USD</div></a></li>
+					 	<li><a href="#"><div class="dropdown_text">EUR</div></a></li>
+					 	<li><a href="#"><div class="dropdown_text">REAL</div></a></li>
+					 </ul>
+
+				</div>
 
 			</div>
 		</div>
 
 		<!-- Logo -->
 		<div class="sidebar_logo">
-				<a href="#"><div>Pet<span>Shop</span></div></a>
-			</div>
-	
-			<!-- Sidebar Navigation -->
-			<nav class="sidebar_nav">
-				<ul>
-					<li><a href="index.html">home<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-					<li><a href="productos.html">productos<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-					<li><a href="login.php">login<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-					<li><a href="f.a.q..html">F.A.Q.<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-					<li><a href="contacto.html">Contactanos!<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-				</ul>
-			</nav>
-	
-			<!-- Cart -->
-			<div class="cart d-flex flex-row align-items-center justify-content-start">
-				<div class="cart_icon"><a href="carrito.html">
-					<img src="images/bag.png" alt="">
-					<div class="cart_num">2</div>
-				</a></div>
-				<div class="cart_text">Carrito</div>
-				<div class="cart_price">$2.500</div>
-			</div>
+			<a href="#"><div>Pet<span>Shop</span></div></a>
 		</div>
+
+		<!-- Sidebar Navigation -->
+		<nav class="sidebar_nav">
+			<ul>
+				<li><a href="index.php">home<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="productos.html">productos<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="login.php">login<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>				
+				<li><a href="f.a.q..html">F.A.Q.<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="contacto.html">Contactanos!<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+			</ul>
+		</nav>
+
+
+		<!-- Cart -->
+		<div class="cart d-flex flex-row align-items-center justify-content-start">
+			<div class="cart_icon"><a href="carrito.html">
+				<img src="images/bag.png" alt="">
+				<div class="cart_num">2</div>
+			</a></div>
+			<div class="cart_text">Carrito</div>
+			<div class="cart_price">$2.500</div>
+		</div>
+	</div>
 
 	<!-- Home -->
 
 	<div class="home">
-		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="images/blog.jpg" data-speed="0.8"></div>
-		<div class="home_container">
-			<div class="home_content">
-				<div class="home_title">Preguntas Frecuentes</div>
-				<div class="breadcrumbs">
-					<ul class="d-flex flex-row align-items-center justify-content-start">
-						<li><a href="index.html">Home</a></li>
-						<li><a href="f.a.q..html">F.A.Q.</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
+		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="images/portada3.jpg" data-speed="0.8"></div>
+		
 	</div>
 
-	<!-- preguntas frecuentes -->
+	<!-- Checkout -->
 
-	<div class="blog">
+	<div class="checkout">
+		
 		<div class="section_container">
 			<div class="container">
 				<div class="row">
 					<div class="col">
-						
-						<!-- Blog Posts -->
-						<div class="blog_bosts">
+						<div class="checkout_container d-flex flex-xxl-row flex-column align-items-start justify-content-start">
 							
-							<!-- Blog Post -->
-							<div class="blog_post">
-								
-								<div class="blog_post_content">
+							<!-- Billing -->
+							<div class="billing checkout_box">
+									<div class="home_title">Contactanos  <i class="fas fa-id-card"></i></div>
+								<br>
 									
-									<div class="blog_post_title"><li>Como comprar?</li></div>
-									<div class="blog_post_info d-flex flex-row align-items-start justify-content-start">
-									<div class="blog_post_text">
-										<p>1- Elige el producto que deseas comprar.Haz clic en el botón de "Agregar".</p>
-										<p>2- Se agregará el producto a tu carrito y te llevará al mismo.</p>
-										<p>3- Puedes seguir agregando otros productos al carrito o sino haz clic en "Procesar pedido".</p>
-										<p>4- Completa tus datos de contacto y haz clic en "Continuar".</p>
-										<p>5- Ingresa la dirección a donde deseas recibir el producto. Luego haz clic en "Continuar".</p>
-										<p>6- Selecciona el método de envío que desees y haz clic en "Continuar". Los envíos los realizo a través de MercadoEnvíos. El tiempo de entrega que figura en esta opción cuenta desde que despachamos el producto.</p>
-										<p>7- Elige el medio de pago.También puedes seleccionar la opción de "Acordar método de pago". Una vez que hayas elegido el medio de pago, haz clic en "Finalizar".</p>
-										<p>8- Finalmente en la página de Confirmación de compra puedes revisar toda la información de la compra. Luego haz clic en "Continuar".</p>
-										<p>9- Ahí serás redirigido a otra pantalla para que completes los datos sobre la forma de pago elegida. Después de confirmar la compra recibirás un correo de nuestra parte, ese no será un comprobante de pago.</p>
-										<p>10- Una vez acreditado el pago, haremos el envío correspondiente de los productos que hayas comprado.</p>
-									</div>
-								</div>
-							</div>
-						</div>
+                                <form>
+                                        <div class="form-group">
+                                          <label for="exampleFormControlInput1">Email</label>
+                                          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                          <label for="exampleFormControlTextarea1">Texto</label>
+                                          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Enviar</button>
+                                      </form>
 
-						<!-- Blog Posts -->
-						<div class="blog_bosts">
-							
-								<!-- Blog Post -->
-								<div class="blog_post">
-									<div class="blog_post_content">
-										<div class="blog_post_title"><li>¿Qué formas de pago aceptan?</li></div>
-										<div class="blog_post_info d-flex flex-row align-items-start justify-content-start">
-										<div class="blog_post_text">
-											<p>Tarjeta de crédito, tarjeta de debito, transferencia bancaria,  Rapipago, Pagofácil o Cobro Espress o en un cajero Banelco o Link o pagar con dinero en cuenta de MercadoPago.</p>
-										</div>
-									</div>
-								</div>
-							</div>
-	
-						</div>
 
-						<!-- Blog Posts -->
-						<div class="blog_bosts">
-							
-							<!-- Blog Post -->
-							<div class="blog_post">
-								<div class="blog_post_content">
-									<div class="blog_post_title"><li>Envíos</li></div>
-									<div class="blog_post_info d-flex flex-row align-items-start justify-content-start">
-									<div class="blog_post_text">
-										<p>Hacemos envíos a todo el país a través de Correo Argentino, Mercado Envios, el costo depende de la localidad.</p>
-									</div>
-								</div>
-							</div>
-						</div>
 
+							</div>
+								
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+
+	
 
 	<!-- Footer -->
 
@@ -292,7 +263,7 @@
 						</div>
 
 
-						<!-- Contacto -->
+						<!-- Contact -->
 						<div class="col-xxl-3 col-md-6 footer_col">
 							<div class="footer_contact">
 								<div class="footer_title">Contacto</div>
@@ -360,8 +331,10 @@
 				</div>
 			</div>				
 		</div>
-
-</div>		
+	
+		
+	
+	
 	<script src="js/jquery-3.2.1.min.js"></script>
 	<script src="styles/bootstrap-4.1.3/popper.js"></script>
 	<script src="styles/bootstrap-4.1.3/bootstrap.min.js"></script>

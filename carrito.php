@@ -14,6 +14,9 @@
 <link rel="stylesheet" type="text/css" href="styles/cart.css">
 <link rel="stylesheet" type="text/css" href="styles/cart_responsive.css">
 </head>
+<?php 
+session_start();
+?>
 <body>
 
 <div class="super_container">
@@ -28,19 +31,33 @@
 	
 				<!-- Logo -->
 				<div class="header_logo">
-					<a href="index.html"><div>pet<span>Shop</span></div></a>
+					<a href="index.php"><div>pet<span>Shop</span></div></a>
 				</div>
 	
 				<!-- Navigation -->
 				<nav class="header_nav">
-					<ul class="d-flex flex-row align-items-center justify-content-start">
-						<li><a href="index.html">Home</a></li>
-						<li><a href="productos.html">productos</a></li>
-						<li><a href="login.php">login</a></li>
-						<li><a href="f.a.q..html">F.A.Q.</a></li>
-						<li><a href="contacto.html">Contactanos!</a></li>
-					</ul>
-				</nav>
+				<ul class="d-flex flex-row align-items-center justify-content-start">
+					<li><a href="index.php">Inicio</a></li>
+					<li><a href="productos.php">Productos</a></li>
+					<li><a href="login.php">Login</a></li> 
+					<li><a href="f.a.q..php">F.A.Q.</a></li>
+                    <li><a href="contacto.php">Contactanos!</a></li>
+                    
+
+                    <?php
+                if (! empty($_SESSION['email'])&&$_SESSION['email']!=''){
+                ?> 
+                <li><a href="perfil.php">Mi Perfil</a></li>               
+                <li><a href="logout.php">Cerrar Sesion</a></li>  
+                <?php
+                }
+                ?>
+
+
+
+
+				</ul>
+			</nav>
 				<!-- Header Extra -->
 				<div class="header_extra ml-auto d-flex flex-row align-items-center justify-content-start">
 	
@@ -104,14 +121,25 @@
 				</form>
 			</div>
 			<nav class="menu_nav">
-				<ul class="menu_mm">
-					<li class="menu_mm"><a href="index.html">home</a></li>
-					<li class="menu_mm"><a href="productos.html">productos</a></li>
-					<li class="menu_mm"><a href="login.php">login</a></li>
-					<li class="menu_mm"><a href="f.a.q..html">F.A.Q.</a></li>
-					<li class="menu_mm"><a href="contacto.html">Contactanos!</a></li>
-				</ul>
-			</nav>
+			<ul class="menu_mm">
+				<li class="menu_mm"><a href="index.php">Inicio</a></li>
+				<li class="menu_mm"><a href="productos.php">Productos</a></li>
+				<li class="menu_mm"><a href="login.php">Login</a></li>
+				<li class="menu_mm"><a href="f.a.q..php">F.A.Q.</a></li>
+                <li class="menu_mm"><a href="contacto.php">Contactanos!</a></li>
+                
+                <?php
+                if (! empty($_SESSION['email'])&&$_SESSION['email']!=''){
+                ?> 
+                <li class="menu_mm"><a href="perfil.php">Mi Perfil</a></li>               
+                <li class="menu_mm"><a href="logout.php">Cerrar Sesion</a></li>  
+                <?php
+                }
+                ?>
+
+
+			</ul>
+		</nav>
 			<div class="menu_social">
 				<ul>
 					<li><a href="https://ar.pinterest.com/"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
@@ -155,15 +183,25 @@
 	
 			<!-- Sidebar Navigation -->
 			<nav class="sidebar_nav">
-				<ul>
-					<li><a href="index.html">home<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-					<li><a href="productos.html">productos<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-					<li><a href="login.php">login<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-					<li><a href="f.a.q..html">F.A.Q.<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-					<li><a href="contacto.html">Contactanos!<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-				</ul>
-			</nav>
-	
+			<ul>
+				<li><a href="index.php">Inicio<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="productos.php">Productos<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				
+				<li><a href="login.php">Login<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="f.a.q..php">F.A.Q.<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                <li><a href="contacto.php">Contactanos!<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                <?php
+                if (! empty($_SESSION['email'])&&$_SESSION['email']!=''){
+                ?>             
+                <li><a href="logout.php">Cerrar Sesion<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                <li><a href="perfil.php">Mi Perfil<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>     
+                <?php
+                }
+                ?>
+
+			</ul>
+		</nav>
+
 	
 			<!-- Cart -->
 			<div class="cart d-flex flex-row align-items-center justify-content-start">
@@ -184,7 +222,7 @@
 				<div class="home_title">Carrito</div>
 				<div class="breadcrumbs">
 					<ul class="d-flex flex-row align-items-center justify-content-start">
-						<li><a href="index.html">Home</a></li>
+						<li><a href="index.php">Home</a></li>
 						<li><a href="carrito.html">Carrito</a></li>
 					</ul>
 				</div>

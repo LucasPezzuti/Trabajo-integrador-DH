@@ -14,6 +14,9 @@
 <link rel="stylesheet" type="text/css" href="styles/product.css">
 <link rel="stylesheet" type="text/css" href="styles/product_responsive.css">
 </head>
+<?php 
+session_start();
+?>
 <body>
 
 <div class="super_container">
@@ -34,7 +37,7 @@
 			<!-- Navigation -->
 			<nav class="header_nav">
 				<ul class="d-flex flex-row align-items-center justify-content-start">
-					<li><a href="index.html">home</a></li>
+					<li><a href="index.php">home</a></li>
 					<li><a href="#">woman</a></li>
 					<li><a href="#">man</a></li>
 					<li><a href="#">lookbook</a></li>
@@ -162,7 +165,7 @@
 		</div>
 		<nav class="menu_nav">
 			<ul class="menu_mm">
-				<li class="menu_mm"><a href="index.html">home</a></li>
+				<li class="menu_mm"><a href="index.php">home</a></li>
 				<li class="menu_mm"><a href="#">woman</a></li>
 				<li class="menu_mm"><a href="#">man</a></li>
 				<li class="menu_mm"><a href="#">lookbook</a></li>
@@ -244,7 +247,7 @@
 		<!-- Sidebar Navigation -->
 		<nav class="sidebar_nav">
 			<ul>
-				<li><a href="index.html">home<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="index.php">home<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
 				<li><a href="#">woman<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
 				<li><a href="#">man<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
 				<li><a href="#">lookbook<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
@@ -281,7 +284,7 @@
 				<div class="home_title">Shop</div>
 				<div class="breadcrumbs">
 					<ul class="d-flex flex-row align-items-center justify-content-start">
-						<li><a href="index.html">Home</a></li>
+						<li><a href="index.php">Home</a></li>
 						<li><a href="categories.html">Woman</a></li>
 						<li><a href="categories.html">Accessories</a></li>
 						<li>Shoulder Bag</li>

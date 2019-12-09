@@ -20,6 +20,12 @@
 <?php
 session_start();
 
+//Si estas logeado te manda al home
+if(isset($_SESSION['email'])&&$_SESSION['email']!=''){
+	header ("Location: index.php");
+	exit; 
+}
+
 
 function verificar(){
 	$db= file_get_contents('usuarios.json');
@@ -32,7 +38,7 @@ function verificar(){
 		$chequeopass=array_search($password ,array_column($usuarios,"password"));
 			if($chequeopass){
 				echo'<script type="text/javascript">
-				alert("Bienvenido");
+				alert("Bienvenido '.$_POST["email"].'");
 				</script>';
 				$_SESSION["email"] = $_POST["email"];
 				$url="index.php";
@@ -54,8 +60,13 @@ function verificar(){
  if(isset($_POST['submit']))
 {
    verificar();
-} 
- 
+}
+
+//creo la cookie
+if (isset($_POST['remember']))
+{
+setcookie ("login",$_POST["email"],time()+ (10 * 365 * 24 * 60 * 60));
+}
 
 ?>
 
@@ -77,7 +88,7 @@ function verificar(){
 			<!-- Navigation -->
 			<nav class="header_nav">
 				<ul class="d-flex flex-row align-items-center justify-content-start">
-					<li><a href="index.html">Inicio</a></li>
+					<li><a href="index.php">Inicio</a></li>
 					<li><a href="productos.html">Productos</a></li>
 					<li><a href="login.php">Login</a></li>
 					<li><a href="perfil.html">Mi Perfil</a></li> <!-- Esto va a ocultarse cuando la sesion no este iniciada -->
@@ -141,7 +152,7 @@ function verificar(){
 		</div>
 		<nav class="menu_nav">
 			<ul class="menu_mm">
-				<li class="menu_mm"><a href="index.html">Inicio</a></li>
+				<li class="menu_mm"><a href="index.php">Inicio</a></li>
 				<li class="menu_mm"><a href="productos.html">Productos</a></li>
 				<li class="menu_mm"><a href="perfil.html">Mi Perfil</a></li> <!-- Esto va a ocultarse cuando la sesion no este iniciada -->
 				<li class="menu_mm"><a href="login.php">Login</a></li>
@@ -195,7 +206,7 @@ function verificar(){
 		<!-- Sidebar Navigation -->
 		<nav class="sidebar_nav">
 			<ul>
-				<li><a href="index.html">Inicio<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="index.php">Inicio<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
 				<li><a href="productos.html">Productos<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
 				<li><a href="perfil.html">Mi Perfil<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
 				<li><a href="login.php">Login<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
@@ -247,6 +258,11 @@ function verificar(){
 											  <label for="exampleInputPassword1">Contraseña</label>
 											  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña" name="password">
 											  No posee una cuenta? <a href="registro.php">Registrese Aquí</a>
+											</div>
+
+											<div class="field-group">
+											<div><input type="checkbox" name="remember" id="remember" <?php if(isset($_COOKIE["login"])) { ?> checked <?php } ?> />
+											<label for="remember-me"> Recordar usuario?</label>
 											</div>
 
 											

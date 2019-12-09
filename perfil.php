@@ -52,6 +52,9 @@
 	
 </style>
 </head>
+<?php 
+session_start();
+?>
 <body>
 
 <div class="super_container">
@@ -72,7 +75,7 @@
 			<!-- Navigation -->
 			<nav class="header_nav">
 				<ul class="d-flex flex-row align-items-center justify-content-start">
-					<li><a href="index.html">Inicio</a></li>
+					<li><a href="index.php">Inicio</a></li>
 					<li><a href="productos.html">Productos</a></li>
 					<li><a href="login.php">Login</a></li>
 					<li><a href="perfil.html">Mi Perfil</a></li> <!-- Esto va a ocultarse cuando la sesion no este iniciada -->
@@ -136,7 +139,7 @@
 		</div>
 		<nav class="menu_nav">
 			<ul class="menu_mm">
-				<li class="menu_mm"><a href="index.html">Inicio</a></li>
+				<li class="menu_mm"><a href="index.php">Inicio</a></li>
 				<li class="menu_mm"><a href="productos.html">Productos</a></li>
 				<li class="menu_mm"><a href="perfil.html">Mi Perfil</a></li> <!-- Esto va a ocultarse cuando la sesion no este iniciada -->
 				<li class="menu_mm"><a href="login.php">Login</a></li>
@@ -190,7 +193,7 @@
 		<!-- Sidebar Navigation -->
 		<nav class="sidebar_nav">
 			<ul>
-				<li><a href="index.html">Inicio<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="index.php">Inicio<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
 				<li><a href="productos.html">Productos<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
 				<li><a href="perfil.html">Mi Perfil<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
 				<li><a href="login.php">Login<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>

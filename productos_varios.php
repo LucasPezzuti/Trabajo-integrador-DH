@@ -276,7 +276,7 @@ session_start();
 									<div class="product_content text-center">
 										<div class="product_title"><a href="producto1varios.php">KIT DE ACUARIO DELUXE "NeoAqus" 24 L</a></div>
 										<div class="product_price">2.440,00</div>
-										<div class="product_button ml-auto mr-auto trans_200"><a href="carrito.php">añadir</a></div>
+										<div class="product_button ml-auto mr-auto trans_200"><a href="carrito.php">Añadir</a></div>
 									</div>
 								</div>	
 							</div>
@@ -290,7 +290,7 @@ session_start();
 									<div class="product_content text-center">
 										<div class="product_title"><a href="product.html">CLORO INSTANTANEO X 3 KG NATACLOR</a></div>
 										<div class="product_price">$ 1.948,90</div>
-										<div class="product_button ml-auto mr-auto trans_200"><a href="#">add to cart</a></div>
+										<div class="product_button ml-auto mr-auto trans_200"><a href="#">Añadir</a></div>
 									</div>
 								</div>	
 							</div>

@@ -435,7 +435,7 @@ session_start();
 									<div class="product_content text-center">
 										<div class="product_title"><a href="product.html">CLORO INSTANTANEO X 3 KG NATACLOR</a></div>
 										<div class="product_price">$ 1.948,90</div>
-										<div class="product_button ml-auto mr-auto trans_200"><a href="#">add to cart</a></div>
+										<div class="product_button ml-auto mr-auto trans_200"><a href="#">añadir</a></div>
 									</div>
 								</div>	
 							</div>

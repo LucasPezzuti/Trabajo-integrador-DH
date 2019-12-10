@@ -284,8 +284,7 @@ if($_SESSION['email']==''){
                                       <div class="panel-body">
                                         <div class="row">
 										
-										<div class="col-md-3 col-lg-3 " align="center"> <img alt="Imagen de perfil" src="archivos/imagen.jpg" class="img-circle img-responsive"> </div>
-                                          
+									<!--	<div class="col-md-3 col-lg-3 " align="center"> <img alt="Imagen de perfil" src="archivos/imagen.jpg" class="img-circle img-responsive"> </div> -->
                                           <!--<div class="col-xs-10 col-sm-10 hidden-md hidden-lg"> <br>
                                             <dl>
                                               <dt>DEPARTMENT:</dt>

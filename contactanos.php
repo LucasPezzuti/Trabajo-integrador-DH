@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title> Iniciar sesión | Pet shop</title>
+<title> CONSULTA | Pet Shop</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="aStar Fashion Template Project">
@@ -11,54 +11,11 @@
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
-<link rel="stylesheet" type="text/css" href="styles/checkout.css">
-<link rel="stylesheet" type="text/css" href="styles/checkout_responsive.css">
-<script src="https://kit.fontawesome.com/0d91f8e901.js" crossorigin="anonymous"></script>
-<style type="text/css">
-	.user-row {
-		margin-bottom: 14px;
-	}
-	
-	.user-row:last-child {
-		margin-bottom: 0;
-	}
-	
-	.dropdown-user {
-		margin: 13px 0;
-		padding: 5px;
-		height: 100%;
-	}
-	
-	.dropdown-user:hover {
-		cursor: pointer;
-	}
-	
-	.table-user-information > tbody > tr {
-		border-top: 0px solid rgb(221, 221, 221);
-	}
-	
-	.table-user-information > tbody > tr:first-child {
-		border-top: 0;
-	}
-	
-	
-	.table-user-information > tbody > tr > td {
-		border-top: 0;
-        padding-right: 100px;
-	}
-	.toppad
-	{margin-top:20px;
-	}
-	
-</style>
+<link rel="stylesheet" type="text/css" href="styles/blog.css">
+<link rel="stylesheet" type="text/css" href="styles/blog_responsive.css">
 </head>
 <?php 
 session_start();
-//Si no estas logeado te manda al home
-if($_SESSION['email']==''){
-	header ("Location: index.php");
-	exit; 
-}
 ?>
 <body>
 
@@ -74,11 +31,11 @@ if($_SESSION['email']==''){
 
 			<!-- Logo -->
 			<div class="header_logo">
-				<a href="index.php"><div>pet<span>Shop</span></div></a>
+				<a href="index.php"><div>pet<span>shop</span></div></a>
 			</div>
 
-			<!-- Navigation -->
-			<nav class="header_nav">
+		<!-- Navigation -->
+		<nav class="header_nav">
 				<ul class="d-flex flex-row align-items-center justify-content-start">
 					<li><a href="index.php">Inicio</a></li>
 					<li><a href="productos.php">Productos</a></li>
@@ -105,21 +62,19 @@ if($_SESSION['email']==''){
 			<!-- Header Extra -->
 			<div class="header_extra ml-auto d-flex flex-row align-items-center justify-content-start">
 
-				
-
 				<!-- Currency -->
 				<div class="info_currencies has_children">
-					<div class="dropdown_text">ARS</div>
-					<div class="dropdown_arrow"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
-
-					<!-- Currencies Dropdown Menu -->
-					 <ul>
-					 	<li><a href="#"><div class="dropdown_text">USD</div></a></li>
-					 	<li><a href="#"><div class="dropdown_text">EUR</div></a></li>
-					 	<li><a href="#"><div class="dropdown_text">REAL</div></a></li>
-					 </ul>
-
-				</div>
+						<div class="dropdown_text">ARS</div>
+						<div class="dropdown_arrow"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
+	
+						<!-- Currencies Dropdown Menu -->
+						 <ul>
+							 <li><a href="#"><div class="dropdown_text">USD</div></a></li>
+							 <li><a href="#"><div class="dropdown_text">EUR</div></a></li>
+							 <li><a href="#"><div class="dropdown_text">REAL</div></a></li>
+						 </ul>
+	
+					</div>
 
 				<!-- Cart -->
 				<div class="cart d-flex flex-row align-items-center justify-content-start">
@@ -128,7 +83,9 @@ if($_SESSION['email']==''){
 						<div class="cart_num">2</div>
 					</a></div>
 				</div>
+
 			</div>
+
 		</div>
 	</header>
 
@@ -138,24 +95,30 @@ if($_SESSION['email']==''){
 		<div class="menu_close_container"><div class="menu_close"><div></div><div></div></div></div>
 		<div class="menu_top d-flex flex-row align-items-center justify-content-start">
 
-			
-
 			<!-- Currency -->
 			<div class="info_currencies has_children">
-				<div class="dropdown_text">ARS</div>
-				<div class="dropdown_arrow"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
-
-				<!-- Currencies Dropdown Menu -->
-				 <ul>
-					 <li><a href="#"><div class="dropdown_text">USD</div></a></li>
-					 <li><a href="#"><div class="dropdown_text">EUR</div></a></li>
-					 <li><a href="#"><div class="dropdown_text">REAL</div></a></li>
-				 </ul>
-
-			</div>
+					<div class="dropdown_text">ARS</div>
+					<div class="dropdown_arrow"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
+	
+					<!-- Currencies Dropdown Menu -->
+					 <ul>
+						 <li><a href="#"><div class="dropdown_text">USD</div></a></li>
+						 <li><a href="#"><div class="dropdown_text">EUR</div></a></li>
+						 <li><a href="#"><div class="dropdown_text">REAL</div></a></li>
+					 </ul>
+	
+				</div>
 
 		</div>
-		<nav class="menu_nav">
+		<div class="menu_search">
+				<form action="#" class="header_search_form menu_mm">
+					<input type="search" class="search_input menu_mm" placeholder="Search" required="required">
+					<button class="header_search_button d-flex flex-column align-items-center justify-content-center menu_mm">
+						<i class="fa fa-search menu_mm" aria-hidden="true"></i>
+					</button>
+				</form>
+			</div>
+			<nav class="menu_nav">
 			<ul class="menu_mm">
 				<li class="menu_mm"><a href="index.php">Inicio</a></li>
 				<li class="menu_mm"><a href="productos.php">Productos</a></li>
@@ -175,18 +138,17 @@ if($_SESSION['email']==''){
 
 			</ul>
 		</nav>
-		<div class="menu_extra">
-			<div class="menu_social">
-				<ul>
-					<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-					<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-					<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-					<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-				</ul>
+			<div class="menu_extra">
+				<div class="menu_social">
+					<ul>
+						<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+						<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+						<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+						<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+					</ul>
+				</div>
 			</div>
 		</div>
-	</div>
-	
 	<!-- Sidebar -->
 
 	<div class="sidebar">
@@ -194,32 +156,30 @@ if($_SESSION['email']==''){
 		<!-- Info -->
 		<div class="info">
 			<div class="info_content d-flex flex-row align-items-center justify-content-start">
-				
-				
 				<!-- Currency -->
 				<div class="info_currencies has_children">
-					<div class="dropdown_text">ARS</div>
-					<div class="dropdown_arrow"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
-
-					<!-- Currencies Dropdown Menu -->
-					 <ul>
-					 	<li><a href="#"><div class="dropdown_text">USD</div></a></li>
-					 	<li><a href="#"><div class="dropdown_text">EUR</div></a></li>
-					 	<li><a href="#"><div class="dropdown_text">REAL</div></a></li>
-					 </ul>
-
-				</div>
+						<div class="dropdown_text">ARS</div>
+						<div class="dropdown_arrow"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
+	
+						<!-- Currencies Dropdown Menu -->
+						 <ul>
+							 <li><a href="#"><div class="dropdown_text">USD</div></a></li>
+							 <li><a href="#"><div class="dropdown_text">EUR</div></a></li>
+							 <li><a href="#"><div class="dropdown_text">REAL</div></a></li>
+						 </ul>
+	
+					</div>
 
 			</div>
 		</div>
 
 		<!-- Logo -->
 		<div class="sidebar_logo">
-			<a href="php"><div>Pet<span>Shop</span></div></a>
-		</div>
-
-		<!-- Sidebar Navigation -->
-		<nav class="sidebar_nav">
+				<a href="index.php"><div>Pet<span>Shop</span></div></a>
+			</div>
+	
+			<!-- Sidebar Navigation -->
+			<nav class="sidebar_nav">
 			<ul>
 				<li><a href="index.php">Inicio<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
 				<li><a href="productos.php">Productos<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>				
@@ -237,122 +197,63 @@ if($_SESSION['email']==''){
 
 			</ul>
 		</nav>
-
-		<!-- Cart -->
-		<div class="cart d-flex flex-row align-items-center justify-content-start">
-			<div class="cart_icon"><a href="carrito.php">
-				<img src="images/bag.png" alt="">
-				<div class="cart_num">2</div>
-			</a></div>
-			<div class="cart_text">Carrito</div>
-			<div class="cart_price">$2.500</div>
+	
+			<!-- Cart -->
+			<div class="cart d-flex flex-row align-items-center justify-content-start">
+				<div class="cart_icon"><a href="carrito.php">
+					<img src="images/bag.png" alt="">
+					<div class="cart_num">2</div>
+				</a></div>
+				<div class="cart_text">Carrito</div>
+				<div class="cart_price">$2.500</div>
+			</div>
 		</div>
-	</div>
 
 	<!-- Home -->
 
 	<div class="home">
-		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="images/portada1.jpg" data-speed="0.8"></div>
-		
-	</div>
-
-	<!-- Checkout -->
-
-	<div class="checkout">
-		
-		<div class="section_container">
-			<div class="container">
-				<div class="row">
-					<div class="col">
-						<div class="checkout_container d-flex flex-xxl-row flex-column align-items-start justify-content-start">
-							
-                            <!-- PERFIL -->
-                        
-                            <div class="container">
-                                <div class="row">
-                                
-
-                                </div>
-                                  
-                                <div class="home_title">Perfil de usuario</div>
-                                <br>
-                                <br>
-                             
-                                    <div class="panel panel-info">
-                                      <div class="panel-heading">
-                                      </div>
-                                      <div class="panel-body">
-                                        <div class="row">
-										
-										<div class="col-md-3 col-lg-3 " align="center"> <img alt="Imagen de perfil" src="archivos/imagen.jpg" class="img-circle img-responsive"> </div>
-                                          
-                                          <!--<div class="col-xs-10 col-sm-10 hidden-md hidden-lg"> <br>
-                                            <dl>
-                                              <dt>DEPARTMENT:</dt>
-                                              <dd>Administrator</dd>
-                                              <dt>HIRE DATE</dt>
-                                              <dd>11/12/2013</dd>
-                                              <dt>DATE OF BIRTH</dt>
-                                                 <dd>11/12/2013</dd>
-                                              <dt>GENDER</dt>
-                                              <dd>Male</dd>
-                                            </dl>
-                                          </div>-->
-                                          <div class=" col-md-9 col-lg-9 "> 
-										  
-										  <table class="table table-user-information">
-                                              <tbody>
-											
-                                                <tr>
-                                                  <td><b>Email:</b></td>
-                                                  <td>asdasd@asdasd.com</td>
-                                                </tr>
-                                                <tr>
-                                                  <td><b>Nombre:</b></td>
-                                                  <td>Juan</td>
-                                                </tr>
-                                                <tr>
-                                                  <td><b>Apellido</b></td>
-                                                  <td>Perez</td>
-                                                </tr>
-                                             
-                                                   <tr>
-                                                       <tr>
-                                                  <td><b>Direccion</b></td>
-                                                  <td>asdasd 123</td>
-                                                </tr>
-                                                  <tr>
-                                                  <td><b>Ciudad</b></td>
-                                                  <td>Rosario</td>
-                                                </tr>
-                                                <tr>
-                                                  <td><b>Pais</b></td>
-                                                  <td>Argentina</td>
-                                                </tr>
-                                                  
-                                                </tr>
-                                               
-                                              </tbody>
-                                            </table>
-                                            
-                                            <a href="#" class="btn btn-primary">Editar perfil</a>
-                                            <a href="#" class="btn btn-primary">Guardar</a>
-                                          </div>
-                                        </div>
-                                      </div>
-                                           
-                                      
-                                    </div>
-                                  </div>
-								
-						</div>
-					</div>
+		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="images/consultanos.jpg" data-speed="0.8"></div>
+		<div class="home_container">
+			<div class="home_content">
+				<div class="home_title">Preguntas Frecuentes</div>
+				<div class="breadcrumbs">
+					<ul class="d-flex flex-row align-items-center justify-content-start">
+						<li><a href="index.php">Home</a></li>
+						<li><a href="f.a.q..php">F.A.Q.</a></li>
+					</ul>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	
+	<!-- preguntas frecuentes -->
+
+	<div class="blog">
+		<div class="section_container">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Email</label>
+                             <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                         </div>
+                         
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Consulta</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            </div>
+                               
+                            <button type="submit" class="btn btn-primary">Enviar</button>
+                    
+                    </form>
+					
+					</div>
+				</div>
+		
+			</div>
+		</div>
+	</div>
 
 	<!-- Footer -->
 
@@ -367,7 +268,7 @@ if($_SESSION['email']==''){
 							<div class="footer_about">
 								<!-- Logo -->
 								<div class="footer_logo">
-								<a href="index.php"><div>pet<span>shop</span></div></a>
+									<a href="index.php"><div>pet<span>shop</span></div></a>
 								</div>
 								<div class="footer_about_text">
 									<p>Nuestro amor por los animales nos llevó a iniciar este negocio para poder brindarles excelencia y calidad, y sobre todo, el mejor cuidado para nuestros compañeros</p>
@@ -384,8 +285,7 @@ if($_SESSION['email']==''){
 							</div>
 						</div>
 
-
-						<!-- Contact -->
+						<!-- Contacto -->
 						<div class="col-xxl-3 col-md-6 footer_col">
 							<div class="footer_contact">
 								<div class="footer_title">Contacto</div>
@@ -453,8 +353,8 @@ if($_SESSION['email']==''){
 				</div>
 			</div>				
 		</div>
-	
-	
+
+</div>		
 	<script src="js/jquery-3.2.1.min.js"></script>
 	<script src="styles/bootstrap-4.1.3/popper.js"></script>
 	<script src="styles/bootstrap-4.1.3/bootstrap.min.js"></script>

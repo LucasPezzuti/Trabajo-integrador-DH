@@ -287,6 +287,9 @@ session_start();
 									<div class="blog_post_info d-flex flex-row align-items-start justify-content-start">
 									<div class="blog_post_text">
 										<p>Hacemos envíos a todo el país a través de Correo Argentino, Mercado Envios, el costo depende de la localidad.</p>
+										<br>
+										
+										<a href="contactanos.php">Hacenos tu consulta</a> 	
 									</div>
 								</div>
 							</div>
@@ -294,6 +297,7 @@ session_start();
 
 					</div>
 				</div>
+		
 			</div>
 		</div>
 	</div>

@@ -256,7 +256,7 @@ session_start();
 									<li class="cart_item item_list d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
 										<div class="product d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
 											<div><div class="product_image"><img src="images/pro5.jpg" alt=""></div></div>
-											<div class="product_name"><a href="producto.php">JUGUETE PARA GATO GIGWI PET DROID 15 X 8 X 7.5 CM</a></div>
+											<div class="product_name"><a href="producto1gato.php">JUGUETE PARA GATO GIGWI PET DROID 15 X 8 X 7.5 CM</a></div>
 										</div>
 										<div class="product_price text-lg-center product_text"><span>Precio: </span>$2.040,00</div>
 										<div class="product_quantity_container">

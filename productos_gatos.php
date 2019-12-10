@@ -241,7 +241,7 @@ session_start();
 										<img src="images/pro5.jpg" alt="">
 									</div>
 									<div class="product_content text-center">
-										<div class="product_title"><a href="producto.php">JUGUETE PARA GATO GIGWI PET DROID 15 X 8 X 7.5 CM</a></div>
+										<div class="product_title"><a href="producto1gato.php">JUGUETE PARA GATO GIGWI PET DROID 15 X 8 X 7.5 CM</a></div>
 										<div class="product_price">2.040,00</div>
 										<div class="product_button ml-auto mr-auto trans_200"><a href="carrito.php">añadir</a></div>
 									</div>

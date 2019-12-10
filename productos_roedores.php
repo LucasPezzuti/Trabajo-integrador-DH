@@ -239,7 +239,7 @@ session_start();
 										<img src="images/pro4.jpg" alt="">
 									</div>
 									<div class="product_content text-center">
-										<div class="product_title"><a href="producto.php">HABITRAIL OVO  -  DWARF HAMSTER</a></div>
+										<div class="product_title"><a href="producto1roedor.php">HABITRAIL OVO  -  DWARF HAMSTER</a></div>
 										<div class="product_price">3.438,96</div>
 										<div class="product_button ml-auto mr-auto trans_200"><a href="carrito.php">añadir</a></div>
 									</div>

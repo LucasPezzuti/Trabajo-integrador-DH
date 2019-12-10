@@ -275,7 +275,7 @@ session_start();
 										<div class="product_tag">Mejor</div>
 									</div>
 									<div class="product_content text-center">
-										<div class="product_title"><a href="producto.php">CEPILLO PARA PERRO TOY FURMINATOR PELO LARGO</a></div>
+										<div class="product_title"><a href="producto1perro.php">CEPILLO PARA PERRO TOY FURMINATOR PELO LARGO</a></div>
 										<div class="product_price">$1.500,00</div>
 										<div class="product_button ml-auto mr-auto trans_200"><a href="carrito.php">añadir</a></div>
 									</div>
@@ -316,7 +316,7 @@ session_start();
 										<img src="images/pro4.jpg" alt="">
 									</div>
 									<div class="product_content text-center">
-										<div class="product_title"><a href="producto.php">HABITRAIL OVO  -  DWARF HAMSTER</a></div>
+										<div class="product_title"><a href="producto1roedor.php">HABITRAIL OVO  -  DWARF HAMSTER</a></div>
 										<div class="product_price">3.438,96</div>
 										<div class="product_button ml-auto mr-auto trans_200"><a href="carrito.php">añadir</a></div>
 									</div>
@@ -330,7 +330,7 @@ session_start();
 										<img src="images/pro5.jpg" alt="">
 									</div>
 									<div class="product_content text-center">
-										<div class="product_title"><a href="producto.php">JUGUETE PARA GATO GIGWI PET DROID 15 X 8 X 7.5 CM</a></div>
+										<div class="product_title"><a href="producto1gato.php">JUGUETE PARA GATO GIGWI PET DROID 15 X 8 X 7.5 CM</a></div>
 										<div class="product_price">2.040,00</div>
 										<div class="product_button ml-auto mr-auto trans_200"><a href="carrito.php">añadir</a></div>
 									</div>
@@ -345,7 +345,7 @@ session_start();
 										<div class="product_tag">Nuevo</div>
 									</div>
 									<div class="product_content text-center">
-										<div class="product_title"><a href="producto.php">KIT DE ACUARIO DELUXE "NeoAqus" 24 L</a></div>
+										<div class="product_title"><a href="producto1varios.php">KIT DE ACUARIO DELUXE "NeoAqus" 24 L</a></div>
 										<div class="product_price">2.440,00</div>
 										<div class="product_button ml-auto mr-auto trans_200"><a href="carrito.php">añadir</a></div>
 									</div>

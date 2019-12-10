@@ -242,7 +242,7 @@ session_start();
 										<div class="product_tag">Mejor</div>
 									</div>
 									<div class="product_content text-center">
-										<div class="product_title"><a href="producto.php">CEPILLO PARA PERRO TOY FURMINATOR PELO LARGO</a></div>
+										<div class="product_title"><a href="producto1perro.php">CEPILLO PARA PERRO TOY FURMINATOR PELO LARGO</a></div>
 										<div class="product_price">$1.500,00</div>
 										<div class="product_button ml-auto mr-auto trans_200"><a href="carrito.php">añadir</a></div>
 									</div>

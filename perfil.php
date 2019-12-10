@@ -54,6 +54,11 @@
 </head>
 <?php 
 session_start();
+//Si no estas logeado te manda al home
+if($_SESSION['email']==''){
+	header ("Location: index.php");
+	exit; 
+}
 ?>
 <body>
 
@@ -77,10 +82,23 @@ session_start();
 				<ul class="d-flex flex-row align-items-center justify-content-start">
 					<li><a href="index.php">Inicio</a></li>
 					<li><a href="productos.php">Productos</a></li>
-					<li><a href="login.php">Login</a></li>
-					<li><a href="perfil.php">Mi Perfil</a></li> <!-- Esto va a ocultarse cuando la sesion no este iniciada -->
+					<li><a href="login.php">Login</a></li> 
 					<li><a href="f.a.q..php">F.A.Q.</a></li>
-					<li><a href="contacto.php">Contactanos!</a></li>
+                    <li><a href="contacto.php">Contactanos!</a></li>
+                    
+
+                    <?php
+                if (! empty($_SESSION['email'])&&$_SESSION['email']!=''){
+                ?> 
+                <li><a href="perfil.php">Mi Perfil</a></li>               
+                <li><a href="logout.php">Cerrar Sesion</a></li>  
+                <?php
+                }
+                ?>
+
+
+
+
 				</ul>
 			</nav>
 
@@ -141,10 +159,20 @@ session_start();
 			<ul class="menu_mm">
 				<li class="menu_mm"><a href="index.php">Inicio</a></li>
 				<li class="menu_mm"><a href="productos.php">Productos</a></li>
-				<li class="menu_mm"><a href="perfil.php">Mi Perfil</a></li> <!-- Esto va a ocultarse cuando la sesion no este iniciada -->
 				<li class="menu_mm"><a href="login.php">Login</a></li>
 				<li class="menu_mm"><a href="f.a.q..php">F.A.Q.</a></li>
-				<li class="menu_mm"><a href="contacto.php">Contactanos!</a></li>
+                <li class="menu_mm"><a href="contacto.php">Contactanos!</a></li>
+                
+                <?php
+                if (! empty($_SESSION['email'])&&$_SESSION['email']!=''){
+                ?> 
+                <li class="menu_mm"><a href="perfil.php">Mi Perfil</a></li>               
+                <li class="menu_mm"><a href="logout.php">Cerrar Sesion</a></li>  
+                <?php
+                }
+                ?>
+
+
 			</ul>
 		</nav>
 		<div class="menu_extra">
@@ -194,14 +222,21 @@ session_start();
 		<nav class="sidebar_nav">
 			<ul>
 				<li><a href="index.php">Inicio<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-				<li><a href="productos.php">Productos<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-				<li><a href="perfil.php">Mi Perfil<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="productos.php">Productos<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>				
 				<li><a href="login.php">Login<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
 				<li><a href="f.a.q..php">F.A.Q.<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-				<li><a href="contacto.php">Contactanos!<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                <li><a href="contacto.php">Contactanos!<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                <?php
+                if (! empty($_SESSION['email'])&&$_SESSION['email']!=''){
+                ?>             
+                <li><a href="logout.php">Cerrar Sesion<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                <li><a href="perfil.php">Mi Perfil<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>     
+                <?php
+                }
+                ?>
+
 			</ul>
 		</nav>
-
 
 		<!-- Cart -->
 		<div class="cart d-flex flex-row align-items-center justify-content-start">

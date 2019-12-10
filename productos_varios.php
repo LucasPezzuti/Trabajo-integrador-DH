@@ -37,11 +37,25 @@ session_start();
 			<!-- Navegacion -->
 			<nav class="header_nav">
 				<ul class="d-flex flex-row align-items-center justify-content-start">
-					<li><a href="index.php">Home</a></li>
-					<li><a href="productos.php">productos</a></li>
-					<li><a href="login.php">login</a></li>
+					<li><a href="index.php">Inicio</a></li>
+					<li><a href="productos.php">Productos</a></li>
+					<li><a href="login.php">Login</a></li> 
 					<li><a href="f.a.q..php">F.A.Q.</a></li>
-					<li><a href="contacto.php">Contactanos!</a></li>
+                    <li><a href="contacto.php">Contactanos!</a></li>
+                    
+
+                    <?php
+                if (! empty($_SESSION['email'])&&$_SESSION['email']!=''){
+                ?> 
+                <li><a href="perfil.php">Mi Perfil</a></li>               
+                <li><a href="logout.php">Cerrar Sesion</a></li>  
+                <?php
+                }
+                ?>
+
+
+
+
 				</ul>
 			</nav>
 			<!-- Extra -->
@@ -99,11 +113,22 @@ session_start();
 		<br>
 		<nav class="menu_nav">
 			<ul class="menu_mm">
-				<li class="menu_mm"><a href="index.php">home</a></li>
-				<li class="menu_mm"><a href="productos.php">productos</a></li>
-				<li class="menu_mm"><a href="login.php">login</a></li>
+				<li class="menu_mm"><a href="index.php">Inicio</a></li>
+				<li class="menu_mm"><a href="productos.php">Productos</a></li>
+				<li class="menu_mm"><a href="login.php">Login</a></li>
 				<li class="menu_mm"><a href="f.a.q..php">F.A.Q.</a></li>
-				<li class="menu_mm"><a href="contacto.php">Contactanos!</a></li>
+                <li class="menu_mm"><a href="contacto.php">Contactanos!</a></li>
+                
+                <?php
+                if (! empty($_SESSION['email'])&&$_SESSION['email']!=''){
+                ?> 
+                <li class="menu_mm"><a href="perfil.php">Mi Perfil</a></li>               
+                <li class="menu_mm"><a href="logout.php">Cerrar Sesion</a></li>  
+                <?php
+                }
+                ?>
+
+
 			</ul>
 		</nav>
 		<div class="menu_extra">
@@ -149,16 +174,25 @@ session_start();
 			<a href="index.php"><div>Pet<span>Shop</span></div></a>
 		</div>
 
-		<!-- Navegacion lateral -->
 		<nav class="sidebar_nav">
 			<ul>
-				<li><a href="index.php">home<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-				<li><a href="productos.php">productos<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-				<li><a href="login.php">login<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="index.php">Inicio<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="productos.php">Productos<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>				
+				<li><a href="login.php">Login<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
 				<li><a href="f.a.q..php">F.A.Q.<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-				<li><a href="contacto.php">Contactanos!<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                <li><a href="contacto.php">Contactanos!<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                <?php
+                if (! empty($_SESSION['email'])&&$_SESSION['email']!=''){
+                ?>             
+                <li><a href="logout.php">Cerrar Sesion<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                <li><a href="perfil.php">Mi Perfil<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>     
+                <?php
+                }
+                ?>
+
 			</ul>
 		</nav>
+
 
 		<!-- Carrito -->
 		<div class="cart d-flex flex-row align-items-center justify-content-start">
@@ -202,7 +236,7 @@ session_start();
 							<div class="products_bar_content d-flex flex-column flex-xxl-row align-items-start align-items-xxl-center justify-content-start">
 								<div class="product_categories">
 									<ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
-										<li><a href="productos.html">Todos</a></li>
+										<li><a href="productos.php">Todos</a></li>
 										<li><a href="productos_perro.php">Perros</a></li>
 										<li><a href="productos_gatos.php">Gatos</a></li>
 										<li><a href="productos_roedores.php">Roedores</a></li>
@@ -240,7 +274,7 @@ session_start();
 										<div class="product_tag">hot</div>
 									</div>
 									<div class="product_content text-center">
-										<div class="product_title"><a href="product.html">long red shirt</a></div>
+										<div class="product_title"><a href="productos.php">long red shirt</a></div>
 										<div class="product_price">$39.90</div>
 										<div class="product_button ml-auto mr-auto trans_200"><a href="#">add to cart</a></div>
 									</div>

@@ -94,7 +94,7 @@ session_start();
 
 				<!-- Cart -->
 				<div class="cart d-flex flex-row align-items-center justify-content-start">
-					<div class="cart_icon"><a href="cart.html">
+					<div class="cart_icon"><a href="carrito.php">
 						<img src="images/bag.png" alt="">
 						<div class="cart_num">2</div>
 					</a></div>

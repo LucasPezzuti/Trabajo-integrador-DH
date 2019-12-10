@@ -90,13 +90,25 @@ setcookie ("login",$_POST["email"],time()+ (10 * 365 * 24 * 60 * 60));
 				<ul class="d-flex flex-row align-items-center justify-content-start">
 					<li><a href="index.php">Inicio</a></li>
 					<li><a href="productos.php">Productos</a></li>
-					<li><a href="login.php">Login</a></li>
-					<li><a href="perfil.php">Mi Perfil</a></li> <!-- Esto va a ocultarse cuando la sesion no este iniciada -->
+					<li><a href="login.php">Login</a></li> 
 					<li><a href="f.a.q..php">F.A.Q.</a></li>
-					<li><a href="contacto.php">Contactanos!</a></li>
+                    <li><a href="contacto.php">Contactanos!</a></li>
+                    
+
+                    <?php
+                if (! empty($_SESSION['email'])&&$_SESSION['email']!=''){
+                ?> 
+                <li><a href="perfil.php">Mi Perfil</a></li>               
+                <li><a href="logout.php">Cerrar Sesion</a></li>  
+                <?php
+                }
+                ?>
+
+
+
+
 				</ul>
 			</nav>
-
 			<!-- Header Extra -->
 			<div class="header_extra ml-auto d-flex flex-row align-items-center justify-content-start">
 
@@ -154,10 +166,20 @@ setcookie ("login",$_POST["email"],time()+ (10 * 365 * 24 * 60 * 60));
 			<ul class="menu_mm">
 				<li class="menu_mm"><a href="index.php">Inicio</a></li>
 				<li class="menu_mm"><a href="productos.php">Productos</a></li>
-				<li class="menu_mm"><a href="perfil.php">Mi Perfil</a></li> <!-- Esto va a ocultarse cuando la sesion no este iniciada -->
 				<li class="menu_mm"><a href="login.php">Login</a></li>
 				<li class="menu_mm"><a href="f.a.q..php">F.A.Q.</a></li>
-				<li class="menu_mm"><a href="contacto.php">Contactanos!</a></li>
+                <li class="menu_mm"><a href="contacto.php">Contactanos!</a></li>
+                
+                <?php
+                if (! empty($_SESSION['email'])&&$_SESSION['email']!=''){
+                ?> 
+                <li class="menu_mm"><a href="perfil.php">Mi Perfil</a></li>               
+                <li class="menu_mm"><a href="logout.php">Cerrar Sesion</a></li>  
+                <?php
+                }
+                ?>
+
+
 			</ul>
 		</nav>
 		<div class="menu_extra">
@@ -207,11 +229,19 @@ setcookie ("login",$_POST["email"],time()+ (10 * 365 * 24 * 60 * 60));
 		<nav class="sidebar_nav">
 			<ul>
 				<li><a href="index.php">Inicio<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-				<li><a href="productos.php">Productos<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-				<li><a href="perfil.php">Mi Perfil<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="productos.php">Productos<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>				
 				<li><a href="login.php">Login<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
 				<li><a href="f.a.q..php">F.A.Q.<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-				<li><a href="contacto.php">Contactanos!<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                <li><a href="contacto.php">Contactanos!<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                <?php
+                if (! empty($_SESSION['email'])&&$_SESSION['email']!=''){
+                ?>             
+                <li><a href="logout.php">Cerrar Sesion<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                <li><a href="perfil.php">Mi Perfil<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>     
+                <?php
+                }
+                ?>
+
 			</ul>
 		</nav>
 

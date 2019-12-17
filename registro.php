@@ -1,44 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<title>Registro | Pet shop</title>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content="aStar Fashion Template Project">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="styles/bootstrap-4.1.3/bootstrap.css">
-<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
-<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
-<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
-<link rel="stylesheet" type="text/css" href="styles/checkout.css">
-<link rel="stylesheet" type="text/css" href="styles/checkout_responsive.css">
-
-<style type="text/css">
-<?php
-if(isset($error))
-{
-  echo $error;
- ?>
- input:focus
- {
-  border:solid red 1px;
- }
- <?php
-}
-?>
-</style>
-
-<script src="https://kit.fontawesome.com/0d91f8e901.js" crossorigin="anonymous"></script>
-</head>
 <?php 
 session_start();
-?>
-<body>
 
-
-
-<?php
 function filtrado($datos){
     $datos = trim($datos); // Elimina espacios antes y después de los datos
     $datos = stripslashes($datos); // Elimina backslashes \
@@ -59,51 +21,40 @@ if(isset($_POST["submit"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
   $direccion = filtrado($_POST["direccion"]);
 }
 
-
-?>
-
-
-<?php
-
 if(isset($_POST["submit"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
     // El nombre y contraseña son campos obligatorios
     if(empty($_POST["nombre"])){
-        $errores[] = "El nombre es requerido";
+        $errores['nombre'] = "El nombre es requerido";
     }
     if(empty($_POST["password"]) || strlen($_POST["password"]) < 5){
-        $errores[] = "La contraseña es requerida y ha de ser mayor a 5 caracteres";
+        $errores['password'] = "La contraseña es requerida y ha de ser mayor a 5 caracteres";
     }
     // El email es obligatorio y ha de tener formato adecuado
     if(!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL) || empty($_POST["email"])){
-        $errores[] = "No se ha indicado email o el formato no es correcto";
+        $errores['email'] = "No se ha indicado email o el formato no es correcto";
     }
     if(empty($_POST["apellido"])){
-      $errores[] = "El apellido es requerido";
+      $errores['apellido'] = "El apellido es requerido";
     }
     if(empty($_POST["pais"])){
-      $errores[] = "El pais es requerido";
+      $errores['pais'] = "El pais es requerido";
     }
     if(empty($_POST["ciudad"])){
-      $errores[] = "La ciudad es requerida";
+      $errores['ciudad'] = "La ciudad es requerida";
     }
     if(empty($_POST["direccion"])){
-      $errores[] = "La direccion es requerida";
+      $errores['direccion'] = "La direccion es requerida";
 	}
 	if($_FILES["imagen"]["error"] != 0){
-		$errores[]= "hubo error al cargar la imagen";
+		$errores['imagen']= "hubo error al cargar la imagen";
 	}else{
 		$ext = pathinfo($_FILES["imagen"]["name"], PATHINFO_EXTENSION);
 		if($ext != "jpg" && $ext != "jpeg" && $ext != "png"){
-			$errores[] = "La extension no es correcta";
+			$errores['imagen'] = "La extension no es correcta";
 		}
 	}
 
 }
-
-?>
-
-<ul> <!-- LISTO LOS ERRORES -->
-<?php
 
 if(isset($_POST['submit'])){
 	$db= file_get_contents('usuarios.json');
@@ -112,21 +63,11 @@ if(isset($_POST['submit'])){
 	$chequeomail=array_search($mail ,array_column($usuarios,"email"));
 	if ($chequeomail){
 		$errores[] = "El email ya existe";
-		}
 	}
+}
 	
-if(isset($errores)&&isset($_POST['submit'])){
-    foreach ($errores as $error){
-        //echo "<li> $error </li>";
-        //SI HAY ERROES LOS MUESTRO EN UN ALERT
-        echo'<script type="text/javascript">
-        alert("Tienes el siguiente error :'. $error.'");
-        </script>';
-    }
-	}
-	else{
+if(!count($errores)&&isset($_POST['submit'])){
 	// Si el array $errores está vacío y existen datos en $_POST, se aceptan los datos y se cargan en el JSON
-
 	if(empty($errores)&&isset($_POST['submit'])){
 		$db= file_get_contents('usuarios.json');
 		$usuarios = json_decode($db,true); 
@@ -151,20 +92,35 @@ if(isset($errores)&&isset($_POST['submit'])){
 		$url="login.php";
 		header("Location:$url");
 
-	}
+	} 
 	if($_FILES){
 		$random=rand(1,999999);
 		move_uploaded_file($_FILES["imagen"]["tmp_name"], "archivos/imagen.".$random.".".$ext);
 
 	}
 }
+?><!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Registro | Pet shop</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="aStar Fashion Template Project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="styles/bootstrap-4.1.3/bootstrap.css">
+<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
+<link rel="stylesheet" type="text/css" href="styles/checkout.css">
+<link rel="stylesheet" type="text/css" href="styles/checkout_responsive.css">
 
-?>
-</ul>
 
 
+<script src="https://kit.fontawesome.com/0d91f8e901.js" crossorigin="anonymous"></script>
+</head>
 
-
+<body>
 
 <div class="super_container">
 
@@ -396,7 +352,10 @@ if(isset($errores)&&isset($_POST['submit'])){
                                         <div class="form-row">
                                           <div class="form-group col-md-6">
                                             <label for="inputEmail4">Email</label>
-                                            <input type="email" name="email" class="form-control" id="inputEmail4" placeholder="Email" value="<?php echo ((isset($_POST["email"])) ? (htmlspecialchars($_POST["email"], ENT_QUOTES)) : ("")); ?>">
+                                            <input type="email" name="email" class="form-control <?php echo isset($errores['email']) ? 'is-invalid' :''?>" id="inputEmail4" placeholder="Email" value="<?php echo ((isset($_POST["email"])) ? (htmlspecialchars($_POST["email"], ENT_QUOTES)) : ("")); ?>">
+										<?php if(isset($errores['email'])):?>
+											<div class="invalid-feedback"><?= $errores['email'] ?></div>
+											<?php	endif; ?>
                                           </div>
                                           <div class="form-group col-md-6">
                                             <label fo1r="inputPassword4">Contraseña</label>

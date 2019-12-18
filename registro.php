@@ -79,11 +79,11 @@ if(!count($errores)&&isset($_POST['submit'])){
 			"ciudad"=>$_POST['ciudad'],
 			"pais"=>$_POST['pais'],
 			//"password" => password_hash($_POST['password'],PASSWORD_DEFAULT)
-			"password" => md5($_POST['password'])
+			"password" => md5($_POST['password']),
 			
 			
 		];
-		
+	
 		
 		$db= json_encode($usuarios);
 		file_put_contents('usuarios.json',$db);
@@ -359,40 +359,62 @@ if(!count($errores)&&isset($_POST['submit'])){
                                           </div>
                                           <div class="form-group col-md-6">
                                             <label fo1r="inputPassword4">Contraseña</label>
-                                            <input type="password" name="password" class="form-control" id="inputPassword4" placeholder="Contraseña">
+                                            <input type="password" name="password" class="form-control <?php echo isset($errores['password']) ? 'is-invalid' :''?>" id="inputPassword4" placeholder="Contraseña">
+											<?php if(isset($errores['password'])):?>
+											<div class="invalid-feedback"><?= $errores['password'] ?></div>
+											<?php	endif; ?>
+							 				</div>
                                           </div>
-                                          
-                                        </div>
                                         <div class="row">
                                                 <div class="col">
                                                   <h5>Nombre</h5>  
-                                                  <input type="text" name="nombre" class="form-control" placeholder="Nombre" value="<?php echo ((isset($_POST["nombre"])) ? (htmlspecialchars($_POST["nombre"], ENT_QUOTES)) : ("")); ?>">
-                                                </div>
+                                                  <input type="text" name="nombre" class="form-control <?php echo isset($errores['nombre']) ? 'is-invalid' :''?>" placeholder="Nombre" value="<?php echo ((isset($_POST["nombre"])) ? (htmlspecialchars($_POST["nombre"], ENT_QUOTES)) : ("")); ?>">
+												  <?php if(isset($errores['nombre'])):?>
+													<div class="invalid-feedback"><?= $errores['nombre'] ?></div>
+													<?php	endif; ?>
+							 							
+											   
+											   
+											    </div>
                                                 <div class="col">
                                                     <h5>Apellido</h5>
-                                                  <input type="text" name="apellido" class="form-control" placeholder="Apellido" value="<?php echo ((isset($_POST["apellido"])) ? (htmlspecialchars($_POST["apellido"], ENT_QUOTES)) : ("")); ?>">
-                                                </div>
+                                                  <input type="text" name="apellido" class="form-control <?php echo isset($errores['apellido']) ? 'is-invalid' :''?>"  placeholder="Apellido" value="<?php echo ((isset($_POST["apellido"])) ? (htmlspecialchars($_POST["apellido"], ENT_QUOTES)) : ("")); ?>">
+												  <?php if(isset($errores['apellido'])):?>
+													<div class="invalid-feedback"><?= $errores['apellido'] ?></div>
+													<?php	endif; ?>
+												</div>
                                               </div>
                                                 <br>
 
                                         <div class="form-group">
                                           <label for="inputAddress2">Direccion</label>
-                                          <input type="text" class="form-control" name="direccion" id="inputAddress2" placeholder="direccion" value="<?php echo ((isset($_POST["direccion"])) ? (htmlspecialchars($_POST["direccion"], ENT_QUOTES)) : ("")); ?>">
-                                        </div>
+                                          <input type="text" class="form-control <?php echo isset($errores['direccion']) ? 'is-invalid' :''?>"  name="direccion" id="inputAddress2" placeholder="direccion" value="<?php echo ((isset($_POST["direccion"])) ? (htmlspecialchars($_POST["direccion"], ENT_QUOTES)) : ("")); ?>">
+										  <?php if(isset($errores['direccion'])):?>
+													<div class="invalid-feedback"><?= $errores['direccion'] ?></div>
+													<?php	endif; ?>
+							 							
+											   
+										</div>
                                         <div class="form-row">
                                           <div class="form-group col-md-6">
                                             <label for="inputCity">Cuidad</label>
-                                            <input type="text" class="form-control" name="ciudad" id="inputCity" value="<?php echo ((isset($_POST["ciudad"])) ? (htmlspecialchars($_POST["ciudad"], ENT_QUOTES)) : ("")); ?>">
-                                          </div>
+                                            <input type="text" class="form-control <?php echo isset($errores['ciudad']) ? 'is-invalid' :''?>" name="ciudad" id="inputCity" value="<?php echo ((isset($_POST["ciudad"])) ? (htmlspecialchars($_POST["ciudad"], ENT_QUOTES)) : ("")); ?>">
+											<?php if(isset($errores['ciudad'])):?>
+													<div class="invalid-feedback"><?= $errores['ciudad'] ?></div>
+													<?php	endif; ?>
+										  </div>
                                           <div class="form-group col-md-4">
                                             <label for="inputState">Pais</label>
-                                            <input type="text" class="form-control" name="pais" id="inputState" value="<?php echo ((isset($_POST["pais"])) ? (htmlspecialchars($_POST["pais"], ENT_QUOTES)) : ("")); ?>">
-                                      
+                                            <input type="text" class="form-control <?php echo isset($errores['pais']) ? 'is-invalid' :''?>" name="pais" id="inputState" value="<?php echo ((isset($_POST["pais"])) ? (htmlspecialchars($_POST["pais"], ENT_QUOTES)) : ("")); ?>">
+											<?php if(isset($errores['pais'])):?>
+													<div class="invalid-feedback"><?= $errores['pais'] ?></div>
+													<?php	endif; ?>
+
 										  </div>
 										 <div>
 											
 										 <label for="">Foto de perfil:</label>
-											<input type="file" name="imagen">
+											<input type="file" name="imagen" >
 											
 
 										 </div>

@@ -309,8 +309,8 @@ setcookie ("login",$_POST["email"],time()+ (10 * 365 * 24 * 60 * 60));
 											
 
 											?>
-											  <label for="exampleInputEmail1">Dirección de correo electrónico</label>
-											  <input type="email" name="email" class="form-control <?php echo $error>1 ? 'is-invalid' :''?>" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="E-mail" value="<?php echo ((isset($_POST["email"])) ? (htmlspecialchars($_POST["email"], ENT_QUOTES)) : ("")); ?>">
+											  <label for="exampleInputEmail1">Dirección de correo electrónico</label> 
+											  <input type="email" name="email" class="form-control <?php echo $error>1&&isset($_POST['submit']) ? 'is-invalid' :''?>" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="E-mail" value="<?php echo ((isset($_POST["email"])) ? (htmlspecialchars($_POST["email"], ENT_QUOTES)) : ("")); ?>">
 											  <small id="emailHelp" class="form-text text-muted">Nunca compartiremos su correo electrónico con nadie más.</small>
 											  
 											  	
@@ -332,7 +332,7 @@ setcookie ("login",$_POST["email"],time()+ (10 * 365 * 24 * 60 * 60));
 											</div>
 											<div class="form-group">
 											  <label for="exampleInputPassword1">Contraseña</label>
-											  <input type="password" class="form-control <?php echo $error<2 ? 'is-invalid' :''?>" id="exampleInputPassword1" placeholder="Contraseña" name="password">
+											  <input type="password" class="form-control <?php echo $error<2&&isset($_POST['submit']) ? 'is-invalid' :''?>" id="exampleInputPassword1" placeholder="Contraseña" name="password">
 											  <div class="invalid-feedback">Contraseña incorrecta</div>
 											  No posee una cuenta? <a href="registro.php">Registrese Aquí</a>
 											</div>

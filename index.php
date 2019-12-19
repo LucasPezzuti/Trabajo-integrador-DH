@@ -1,9 +1,9 @@
 <?php 
 session_start();
  if (isset($_SESSION['email'])){
-echo'<script type="text/javascript">
-alert("Bienvenido '. $_SESSION['email'].'");
-</script>';
+	//echo'<script type="text/javascript">
+//alert("Bienvenido '. $_SESSION['email'].'");
+//</script>';
 }
 
 ?>
@@ -37,7 +37,13 @@ alert("Bienvenido '. $_SESSION['email'].'");
 			<div class="hamburger menu_mm"><i class="fa fa-bars menu_mm" aria-hidden="true"></i></div>
 
 			<!-- Logo -->
+			
+			
 			<div class="header_logo">
+			
+				
+				
+				<br>
 				<a href="#"><div>pet<span>Shop</span></div></a>
 			</div>
 
@@ -154,14 +160,36 @@ alert("Bienvenido '. $_SESSION['email'].'");
 	<!-- Barra lateral - VISTA PC -->
 
 	<div class="sidebar">
-		
+
 		<!-- Informacion -->
-		<div class="info">
-			<div class="info_content d-flex flex-row align-items-center justify-content-start">
+		<div class="info">	<?php
+                if (! empty($_SESSION['email'])&&$_SESSION['email']!=''){
+                ?> 
 				
+				<div class="float-left">
+				<div class="header_logo">
+				Bienvenido<span> <?php echo $_SESSION['email'] ?> </span>
+				<br>
+				</div>
+				</div><br>
+			
+				<?php
+                }
+                ?>
+			
+	
+			<div class="info_content d-flex flex-row align-items-center justify-content-start">
+
+				
+
 				
 				<!-- moneda -->
 				<div class="info_currencies has_children">
+
+				
+
+
+
 					<div class="dropdown_text">ARS</div>
 					<div class="dropdown_arrow"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
 
@@ -178,7 +206,15 @@ alert("Bienvenido '. $_SESSION['email'].'");
 		</div>
 
 		<!-- Logo -->
+	
+		
+		
 		<div class="sidebar_logo">
+	
+
+
+	
+
 			<a href="#"><div>Pet<span>Shop</span></div></a>
 		</div>
 

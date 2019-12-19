@@ -1,3 +1,14 @@
+<?php 
+session_start();
+ if (isset($_SESSION['email'])){
+	//echo'<script type="text/javascript">
+//alert("Bienvenido '. $_SESSION['email'].'");
+//</script>';
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -284,35 +295,37 @@ if($_SESSION['email']==''){
                                       <div class="panel-body">
                                         <div class="row">
 										
-									<!--	<div class="col-md-3 col-lg-3 " align="center"> <img alt="Imagen de perfil" src="archivos/imagen.jpg" class="img-circle img-responsive"> </div> -->
-                                          <!--<div class="col-xs-10 col-sm-10 hidden-md hidden-lg"> <br>
-                                            <dl>
-                                              <dt>DEPARTMENT:</dt>
-                                              <dd>Administrator</dd>
-                                              <dt>HIRE DATE</dt>
-                                              <dd>11/12/2013</dd>
-                                              <dt>DATE OF BIRTH</dt>
-                                                 <dd>11/12/2013</dd>
-                                              <dt>GENDER</dt>
-                                              <dd>Male</dd>
-                                            </dl>
-                                          </div>-->
+									
                                           <div class=" col-md-9 col-lg-9 "> 
 										  
 										  <table class="table table-user-information">
                                               <tbody>
-											
+
                                                 <tr>
-                                                  <td><b>Email:</b></td>
-                                                  <td>asdasd@asdasd.com</td>
+
+												<?php
+                								if (! empty($_SESSION['email'])&&$_SESSION['email']!=''){
+                									?> 
+				
+													
+														 <td><b>Email:</b></td>
+                                                  <td> <?php echo $_SESSION['email'] ?></td>
                                                 </tr>
                                                 <tr>
+													 
+														
+			
+														<?php
+               											 }
+              											  ?>
+			
+                                                 
                                                   <td><b>Nombre:</b></td>
-                                                  <td>Juan</td>
+                                                  <td>sebastian</td>
                                                 </tr>
                                                 <tr>
                                                   <td><b>Apellido</b></td>
-                                                  <td>Perez</td>
+                                                  <td>mena</td>
                                                 </tr>
                                              
                                                    <tr>

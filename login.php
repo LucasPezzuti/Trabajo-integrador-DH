@@ -1,12 +1,13 @@
 <?php
 session_start();
+ob_start();
+
 
 //Si estas logeado te manda al home
 if(isset($_SESSION['email'])&&$_SESSION['email']!=''){
 	header ("Location: index.php");
 	exit; 
 }
-
 
 function verificar(){
 	$db= file_get_contents('usuarios.json');
@@ -18,36 +19,44 @@ function verificar(){
 	if ($chequeomail){
 		$chequeopass=array_search($password ,array_column($usuarios,"password"));
 			if($chequeopass){
-				echo'<script type="text/javascript">
+				/* echo'<script type="text/javascript">
 				alert("Bienvenido '.$_POST["email"].'");
-				</script>';
+				</script>'; */
 				$_SESSION["email"] = $_POST["email"];
-				$url="index.php";
-				header("Location:$url");
+				//$url="index.php";
+				header("Location:index.php");
+				ob_end_flush();
+				
 				//aca tiene q crear sesion y pasar al home
 				}else{
-					echo'<script type="text/javascript">
+			/* 		echo'<script type="text/javascript">
 				alert("Contraseña incorrecta");
-				</script>';
+				</script>'; */
+				$error=1;
+				//var_dump($errorpass);
+				return $error;
 						}
 			} else {
-					echo'<script type="text/javascript">
+				/*  	echo'<script type="text/javascript">
 					alert("Usuario incorrecto");
-					</script>';
+					</script>';*/
+				$error=2;
+				//var_dump($errorusu);
+				return $error;
 					}
 				} 
  
  
- if(isset($_POST['submit']))
-{
-   verificar();
-}
 
 //creo la cookie
 if (isset($_POST['remember']))
 {
 setcookie ("login",$_POST["email"],time()+ (10 * 365 * 24 * 60 * 60));
 }
+
+
+
+
 
 ?>
 
@@ -284,14 +293,47 @@ setcookie ("login",$_POST["email"],time()+ (10 * 365 * 24 * 60 * 60));
 									<div class="home_title">Iniciar Sesión<i class="fas fa-street-view"></i></div>
 								<br>
 									<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
-											<div class="form-group">
+											<div class="form-group"> 
+											<?php
+									/* 		
+											var_dump($errorpass);
+											var_dump($errorusu); */
+
+											if(isset($_POST['submit']))
+											{
+											   $error=Verificar();
+											   
+
+											  
+											} 
+											
+
+											?>
 											  <label for="exampleInputEmail1">Dirección de correo electrónico</label>
-											  <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="E-mail" value="<?php echo ((isset($_POST["email"])) ? (htmlspecialchars($_POST["email"], ENT_QUOTES)) : ("")); ?>">
+											  <input type="email" name="email" class="form-control <?php echo $error>1 ? 'is-invalid' :''?>" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="E-mail" value="<?php echo ((isset($_POST["email"])) ? (htmlspecialchars($_POST["email"], ENT_QUOTES)) : ("")); ?>">
 											  <small id="emailHelp" class="form-text text-muted">Nunca compartiremos su correo electrónico con nadie más.</small>
+											  
+											  	
+											
+											  <div class="invalid-feedback">Usuario incorrecto</div>
+										
+
+
+
+
+												
+	
+									
+						
+											
+
+
+
 											</div>
 											<div class="form-group">
 											  <label for="exampleInputPassword1">Contraseña</label>
-											  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña" name="password">
+											  <input type="password" class="form-control <?php echo $error<2 ? 'is-invalid' :''?>" id="exampleInputPassword1" placeholder="Contraseña" name="password">
+											  <div class="invalid-feedback">Contraseña incorrecta</div>
 											  No posee una cuenta? <a href="registro.php">Registrese Aquí</a>
 											</div>
 

@@ -66,7 +66,7 @@ if(isset($_POST['submit'])){
 	}
 }
 	
-if(!count($errores)&&isset($_POST['submit'])){
+if(empty($errores)&&isset($_POST['submit'])){
 	// Si el array $errores está vacío y existen datos en $_POST, se aceptan los datos y se cargan en el JSON
 	if(empty($errores)&&isset($_POST['submit'])){
 		$db= file_get_contents('usuarios.json');

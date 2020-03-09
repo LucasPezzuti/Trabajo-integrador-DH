@@ -1,68 +1,80 @@
 <?php
+
+ //login.php
+ 
+/**
+ * Start the session.
+ */
 session_start();
-ob_start();
-
-
-//Si estas logeado te manda al home
-if(isset($_SESSION['email'])&&$_SESSION['email']!=''){
-	header ("Location: index.php");
-	exit; 
-}
-
-function verificar(){
-	$db= file_get_contents('usuarios.json');
-	$usuarios = json_decode($db,true); 
-	$password =md5($_POST['password']);
-	$mail =$_POST["email"];
-	
-	$chequeomail=array_search($mail ,array_column($usuarios,"email"));
-	if ($chequeomail){
-		$chequeopass=array_search($password ,array_column($usuarios,"password"));
-			if($chequeopass){
-				/* echo'<script type="text/javascript">
-				alert("Bienvenido '.$_POST["email"].'");
-				</script>'; */
-				$_SESSION["email"] = $_POST["email"];
-				//$url="index.php";
-				header("Location:index.php");
-				ob_end_flush();
-				
-				//aca tiene q crear sesion y pasar al home
-				}else{
-			/* 		echo'<script type="text/javascript">
-				alert("Contraseña incorrecta");
-				</script>'; */
-				$error=1;
-				//var_dump($errorpass);
-				return $error;
-						}
-			} else {
-				/*  	echo'<script type="text/javascript">
-					alert("Usuario incorrecto");
-					</script>';*/
-				$error=2;
-				//var_dump($errorusu);
-				return $error;
-					}
-				} 
+ 
+/**
+ * Include ircmaxell's password_compat library.
+ */
+require 'lib/password.php';
+ 
+/**
+ * Include our MySQL connection.
+ */
+require 'connection.php';
  
  
+//If the POST var "login" exists (our submit button), then we can
+//assume that the user has submitted the login form.
+if(isset($_POST['login'])){
+    
+    //Retrieve the field values from our login form.
+    $username = !empty($_POST['email']) ? trim($_POST['email']) : null;
+    $passwordAttempt = !empty($_POST['password']) ? trim($_POST['password']) : null;
+    
+    //Retrieve the user account information for the given username.
+    $sql = "SELECT id, email, password FROM clientes WHERE email = :email";
+    $stmt = $pdo->prepare($sql);
+    
+    //Bind value.
+    $stmt->bindValue(':email', $username);
+    
+    //Execute.
+    $stmt->execute();
+    
+    //Fetch row.
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+    //If $row is FALSE.
+    if($user === false){
+        //Could not find a user with that username!
+        //PS: You might want to handle this error in a more user-friendly manner!
+        die('Incorrect username / password combination!');
+    } else{
+        //User account found. Check to see if the given password matches the
+        //password hash that we stored in our users table.
+        
+        //Compare the passwords.
+         $validPassword = password_verify($passwordAttempt, $user['password']);
+        
+        //If $validPassword is TRUE, the login has been successful.
+        if($validPassword){
+             
+            //Provide the user with a login session.
+            $_SESSION['id'] = $user['id'];
+            $_SESSION['logged_in'] = time();
+            
+            //Redirect to our protected page, which we called home.php
+            header('Location: home.php');
+            exit;
+            
+        }
+    }
+    }
+ 
+?>
 
-//creo la cookie
-if (isset($_POST['remember']))
-{
-setcookie ("login",$_POST["email"],time()+ (10 * 365 * 24 * 60 * 60));
-}
+
 
 
 
 
 
 ?>
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -295,18 +307,7 @@ setcookie ("login",$_POST["email"],time()+ (10 * 365 * 24 * 60 * 60));
 									<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
 											<div class="form-group"> 
 											<?php
-									/* 		
-											var_dump($errorpass);
-											var_dump($errorusu); */
 
-											if(isset($_POST['submit']))
-											{
-											   $error=Verificar();
-											   
-
-											  
-											} 
-											
 
 											?>
 											  <label for="exampleInputEmail1">Dirección de correo electrónico</label> 
@@ -319,10 +320,15 @@ setcookie ("login",$_POST["email"],time()+ (10 * 365 * 24 * 60 * 60));
 										
 
 
-
+												
 
 												
-	
+											<!DOCTYPE html>
+
+           
+
+
+
 									
 						
 											
@@ -343,7 +349,7 @@ setcookie ("login",$_POST["email"],time()+ (10 * 365 * 24 * 60 * 60));
 											</div>
 
 											
-											<button type="submit" id="boton" name="submit" value="Enviar" class="btn btn-success">Entrar</button>
+											<button type="submit" id="boton" name="login" value="Login" class="btn btn-success">Entrar</button>
 										  </form>
 
 

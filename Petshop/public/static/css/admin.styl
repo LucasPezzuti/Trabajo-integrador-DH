@@ -1,0 +1,22 @@
+body
+    background-color #f5f6fa
+    font-size 14px
+    font-family: 'Roboto', sans-serif;
+
+//esto resetea padding y margin que los navegadores ponen por defecto
+h2,h3,h4,h5,ul,body,html 
+    padding 0px
+    margin 0px
+
+.wrapper 
+    min-height 100vh //para que el contenedor abarque como minimo el 100% de la altura del monitor
+    overflow hiddden //para que como vaamos a tener flotando las 2 columnas, siga siendo una caja rigida
+    .col1 
+        float left 
+        position relative 
+        z-index 999  //permite posicion en el eje z el contenedor
+        width 17%
+    .col2
+        float left 
+        width 83%
+        

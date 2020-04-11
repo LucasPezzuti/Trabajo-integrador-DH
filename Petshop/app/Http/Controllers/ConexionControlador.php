@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 // Hash hashea las password
 // Auth, clase para validar. valida automaticamente el hash y compara con la bd
 use Validator, Hash, Auth;
-use App\usuarios;
+use App\User;
 
 class ConexionControlador extends Controller
 {
@@ -43,7 +43,7 @@ class ConexionControlador extends Controller
 
         else:
             //el true define si queda abierta la sesion.
-            //en config/auth.php cambie user por usuarios que es mi clase de usuarios
+         
             if(Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password')], true)):
 
                 return redirect('/');
@@ -64,7 +64,7 @@ class ConexionControlador extends Controller
         $rules = [
             'name' => 'required',
             'lastname' => 'required',
-            'email' => 'required|email|unique:App\usuarios,email',
+            'email' => 'required|email|unique:App\user,email',
             'password' => 'required|min:8',
             'cpassword' => 'required|same:password'
         ];
@@ -94,7 +94,7 @@ class ConexionControlador extends Controller
         else:
             //creo una nueva instancia del modelo user, para guardar los datos en la tabla usuarios.
             // e encondea por seguridad
-            $user = new usuarios;
+            $user = new user;
             $user->nombre = e($request->input('name'));
             $user->apellido = e($request->input('lastname'));
             $user->email = e($request->input('email'));

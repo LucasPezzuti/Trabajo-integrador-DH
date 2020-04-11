@@ -19,5 +19,7 @@ Route::get('/', function () {
 
 // Ruta auth
 Route::get('/login', 'ConexionControlador@getLogin')->name('login');
+Route::post('/login', 'ConexionControlador@postLogin')->name('login');
+Route::get('/logout', 'ConexionControlador@getLogout')->name('logout');
 Route::get('/registro', 'ConexionControlador@getRegistro')->name('registro');
 Route::post('/registro', 'ConexionControlador@postRegistro')->name('registro');

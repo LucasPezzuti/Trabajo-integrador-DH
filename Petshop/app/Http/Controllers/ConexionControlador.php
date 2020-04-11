@@ -4,13 +4,55 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 //validator clase de laravel para validaciones
-use Validator, Hash;
+// Hash hashea las password
+// Auth, clase para validar. valida automaticamente el hash y compara con la bd
+use Validator, Hash, Auth;
 use App\usuarios;
 
 class ConexionControlador extends Controller
 {
+    public function __construct(){
+        //lo que esta aca requiere que el usuario no este logeado
+        //getLogout no se ejecuta dentro de este middleware
+        //en middleware/redirectifauthenticated.php cambie la ruta de redireccion de /home a /
+        $this->middleware('guest')->except(['getLogout']);
+
+    }
     public function getLogin(){
         return view('conexion.login');
+    }
+
+    public function postLogin(Request $request){
+        $rules = [
+            'email' => 'required|email',
+            'password'=> 'required|min:8'
+        ];
+
+        $messages = [
+            'email.required' => 'Su email es requerido.',
+            'email.email' => 'El formato de su email es incorrecto.',
+            'password.required' => 'Su contraseña es requerida.',
+            'password.min' => 'Su contraseña debe tener al menos 8 caracteres.',
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+        if($validator->fails()):
+            //si falla junta los errores y los devuelve con la variable de sesion message
+            //con el tipo de alerta danger puedo mostrarlas con bootstrap
+            return back()->withErrors($validator)->with('message', 'Se ha producido un error.')->with('typealert','danger');
+
+        else:
+            //el true define si queda abierta la sesion.
+            //en config/auth.php cambie user por usuarios que es mi clase de usuarios
+            if(Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password')], true)):
+
+                return redirect('/');
+
+            else: return back()->withErrors($validator)->with('message', 'Email o contraseña errónea.')->with('typealert','danger');
+
+            endif;
+
+        endif;
     }
 
     public function getRegistro(){
@@ -62,5 +104,10 @@ class ConexionControlador extends Controller
                 return redirect('/login')->with('message', 'Usuario creado con éxito. Ahora puede iniciar sesión.')->with('typealert','success');
             endif;
 
+    }
+
+    public function getLogout(){
+        Auth::logout();
+        return redirect('/');
     }
 }

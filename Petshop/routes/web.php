@@ -20,3 +20,4 @@ Route::get('/', function () {
 // Ruta auth
 Route::get('/login', 'ConexionControlador@getLogin')->name('login');
 Route::get('/registro', 'ConexionControlador@getRegistro')->name('registro');
+Route::post('/registro', 'ConexionControlador@postRegistro')->name('registro');

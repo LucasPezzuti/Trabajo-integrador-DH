@@ -81,12 +81,37 @@
 
                 </div>
 
+
+                <div class="col-md-3">
+
+                    <label for="descuento">Descuento</label>
+
+                    <div class="input-group"> {{-- clase de bootstrap para input --}}
+                        <div class="input-group-prepend">
+
+                            <span class="input-group-text" id="basic-addon1"><i class="fas fa-percentage"></i></span>
+
+                        </div>
+                        
+                        {!! Form::number('discount', 0.00, ['class' => 'form-control', 'min' => '0.00', 'step' =>'any']) !!}
+                    </div>
+
+                </div>
+
             </div>
 
             <div class="row mtop16">
                 <div class="col-md-12">
                     <label for="content">Descripción</label>
-                    {!! Form::textarea('content', null, ['class' => 'form-control']) !!}
+{{--                     le agregue el id editor para que trabaje con ckeditor--}}                    
+                    {!! Form::textarea('content', null, ['class' => 'form-control', 'id' => 'editor']) !!}
+                </div>
+            </div>
+            
+            {{-- creacion del boton de guardar --}}
+            <div class="row mtop16">
+                <div class="col-md-12">
+                    {!! Form::submit('Guardar', ['class' => 'btn btn-success']) !!}
                 </div>
             </div>
 

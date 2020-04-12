@@ -65,22 +65,22 @@
             {{-- es un condicional en blade, si hay una variable de sesion "message" nos muestra el tipo de alerta y la lista de errores--}} 
 
         @if(Session::has('message'))
-        <div>
-            <div class="alert alert {{ Session::get('typealert') }}" style="display:none;">
-                {{ Session::get('message') }}
-                @if ($errors->any())
-                <ul>
-                    @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>                    
-                    @endforeach
-                </ul>
-                @endif
-                <script>
-                    $('.alert').slideDown();
-                    setTimeout(function(){ $('.alert').slideUp(); }, 10000);
-                </script>
+            <div>
+                <div class="alert alert {{ Session::get('typealert') }}" style="display:none;">
+                    {{ Session::get('message') }}
+                    @if ($errors->any())
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>                    
+                        @endforeach
+                    </ul>
+                    @endif
+                    <script>
+                        $('.alert').slideDown();
+                        setTimeout(function(){ $('.alert').slideUp(); }, 10000);
+                    </script>
+                </div>
             </div>
-        </div>
         @endif
 
 

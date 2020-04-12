@@ -22,14 +22,67 @@
         }
     </script>
 
-    <title>@yield('title')</title>
+    <title>@yield('title') DH Petshop</title>
 </head>
 <body>
     
     <div class="wrapper">
         {{-- cargo el sidebar de la carpeta admin --}}
         <div class="col1">@include('admin.sidebar')</div>
-        <div class="col2"></div>
+        <div class="col2">
+            <nav class="navbar navbar-expand-lg shadow">
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                        <a href="{{ url('/admin') }}" class="nav-link"><i class="fas fa-home"></i>Panel de Administrador</a>
+                        </li>
+                    </ul>
+                </div>    
+            </nav>
+
+             {{-- contenido --}}
+            <div class="page">
+                
+                <div class="container-fluid">
+                    <nav aria-label="breadcrumb shadow">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="{{ url('/admin') }}"><i class="fas fa-home"></i>Panel de Administrador</a></a>
+                            </li>
+                            @section('breadcrumb')
+                            @show
+                        </ol>
+                    </nav>
+                </div>
+
+
+                {{-- para mostrar las alertas de la aplicacion--}}
+                @if(Session::has('message'))
+                    <div>
+                        <div class="alert alert {{ Session::get('typealert') }}" style="display:none;">
+                            {{ Session::get('message') }}
+                            @if ($errors->any())
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>                    
+                                @endforeach
+                            </ul>
+                            @endif
+                            <script>
+                                $('.alert').slideDown();
+                                setTimeout(function(){ $('.alert').slideUp(); }, 10000);
+                            </script>
+                        </div>
+                    </div>
+                @endif
+
+                @section('content')
+                @show
+
+
+            </div>
+
+        </div>
     </div>
 
 </body>

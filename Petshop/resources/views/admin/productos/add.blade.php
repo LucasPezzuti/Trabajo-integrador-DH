@@ -26,14 +26,14 @@
             {!! Form::open(['url'=> '/admin/productos/add']) !!}
             <div class="row">
                 <div class="col-md-6">
-                    <label for="name">Nombre del producto:</label>
+                    <label for="nombre">Nombre del producto:</label>
                     <div class="input-group"> {{-- clase de bootstrap para input --}}
                         <div class="input-group-prepend">
 
                             <span class="input-group-text" id="basic-addon1"><i class="fas fa-keyboard"></i></span>
 
                         </div>
-                        {!! Form::text('name', null, ['class' => 'form-control']) !!}
+                        {!! Form::text('nombre', null, ['class' => 'form-control']) !!}
                     </div>
                 </div>
                 <div class="col-md-3">
@@ -84,7 +84,7 @@
 
                         </div>
                         {{-- campo de seleccion. Le defino las opciones. 0 es no, 1 es si. El ultimo 0 es el valor default --}}
-                    {!! Form::select('indiscount', ['0' => 'No', '1' => 'Si'], 0, ['class' => 'custom-select' ]) !!}
+                    {!! Form::select('endescuento', ['0' => 'No', '1' => 'Si'], 0, ['class' => 'custom-select' ]) !!}
                     </div>
 
                 </div>
@@ -101,7 +101,7 @@
 
                         </div>
                         
-                        {!! Form::number('discount', 0.00, ['class' => 'form-control', 'min' => '0.00', 'step' =>'any']) !!}
+                        {!! Form::number('descuento', 0.00, ['class' => 'form-control', 'min' => '0.00', 'step' =>'any']) !!}
                     </div>
 
                 </div>
@@ -110,9 +110,9 @@
 
             <div class="row mtop16">
                 <div class="col-md-12">
-                    <label for="content">Descripción</label>
+                    <label for="contenido">Descripción</label>
 {{--                     le agregue el id editor para que trabaje con ckeditor--}}                    
-                    {!! Form::textarea('content', null, ['class' => 'form-control', 'id' => 'editor']) !!}
+                    {!! Form::textarea('contenido', null, ['class' => 'form-control', 'id' => 'editor']) !!}
                 </div>
             </div>
             

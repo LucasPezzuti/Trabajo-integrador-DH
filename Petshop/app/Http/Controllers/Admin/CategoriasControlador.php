@@ -11,13 +11,25 @@ use App\Http\Models\Categorias;  // traigo el modelo de categorias
 class CategoriasControlador extends Controller
 {
     public function __construct(){
+       
         //el middleware auth verifica si el usuario esta conectado. es admin verifica si es admin
+        
         $this->middleware('auth');
         $this->middleware('esAdmin');
     }
 
-    public function getHome(){
-        return view('admin.categorias.home'); //esto se lee carpeta admin, subcarpeta categorias view home
+    public function getHome($modulo){
+         //paso como parametro el modulo 0 que es de productos
+        
+         //consulta de la lista de categorias
+        $cats = Categorias::where('modulo', $modulo)->orderBy('nombre', 'Asc')->get();
+        //array con los valores de la consulta
+        $data = ['cats' => $cats];
+
+        //paso a la vista la variable con los valores de la consulta
+        return view('admin.categorias.home', $data); //esto se lee carpeta admin, subcarpeta categorias view home
+
+
     }
 
     public function postCategoriaAdd(Request $request){

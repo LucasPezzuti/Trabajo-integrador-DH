@@ -9,6 +9,7 @@ Route::prefix('/admin')->group(function(){
     Route::get('/productos/add', 'Admin\ProductosControlador@getProductoadd');
 
      /* Categorias */
-     Route::get('/categorias', 'Admin\CategoriasControlador@getHome');
+     /* hago uso del filtrado pasandole el modulo */
+     Route::get('/categorias/{modulo}', 'Admin\CategoriasControlador@getHome');
      Route::post('/categorias/add', 'Admin\CategoriasControlador@postCategoriaAdd');
 });

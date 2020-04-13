@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use App\Http\Models\Categorias;
+/* traigo el modelo de categorias para seleccionar una de la lista
+ */
 class ProductosControlador extends Controller
 {
     public function __construct(){
@@ -20,7 +23,9 @@ class ProductosControlador extends Controller
 
     
     public function getProductoadd(){
-
-        return view('admin.productos.add');
+        //el metodo pluck devuelve un array con los datos q se van a cargar
+        $cats = Categorias::where('modulo', '0')->pluck('nombre', 'id');
+        $data = ['cats' => $cats];
+        return view('admin.productos.add', $data);
     }
 }

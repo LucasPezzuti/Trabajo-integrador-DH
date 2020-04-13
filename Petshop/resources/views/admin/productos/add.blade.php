@@ -37,11 +37,19 @@
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <label for="name">Categoría:</label>
+                    <label for="categorias">Categoría:</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">
+                                <i class="far fa-keyboard"></i>
+                            </span>
+                        </div>
+                        {!! Form::select('categorias', $cats, 0, ['class' => 'custom-select']) !!}
+                    </div>
                 </div>
 
                 <div class="col-md-3">
-                    <label for="name">Imagen:</label>
+                    <label for="imagen">Imagen:</label>
                     <div class="custom-file">
                         {!! Form::file('img', ['class' =>'custom-file-input', 'id' => 'customFile']) !!}
                         <label class="custom-file-label" for="customFile">Elegir imagen</label>

@@ -28,6 +28,10 @@
             </li>
 
             <li>
+                <a href="{{ url('/admin/categorias') }}"><i class="fas fa-folder"></i>Categorías</a>
+            </li>
+
+            <li>
                 <a href="{{ url('/admin/users') }}"><i class="fas fa-users"></i>Usuarios</a>
             </li>
         </ul>

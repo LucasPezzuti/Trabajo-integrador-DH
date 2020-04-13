@@ -82,7 +82,7 @@
                    <table class="table mtop16">
                        <thead>
                            <tr>
-                               <td width="32px"></td>
+                               <td width="32px">Ícono</td>
                                <td>Nombre</td>
                                <td width="140px"></td>
                            </tr>

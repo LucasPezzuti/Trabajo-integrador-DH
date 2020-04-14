@@ -54,6 +54,11 @@ return [
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
         ],
+        //nuevo. declarado para subir imagenes.
+        'uploads' => [
+            'driver' => 'local',
+            'root' => 'C:\Users\Lukpo\Desktop\Proyecto DH laravel\Trabajo-integrador-DH\Petshop\public\uploads'
+        ],
 
         's3' => [
             'driver' => 's3',

@@ -22,8 +22,8 @@
         </div>
 
         <div class="inside">
-
-            {!! Form::open(['url'=> '/admin/productos/add']) !!}
+                {{-- files true para permitir las imagenes --}}
+            {!! Form::open(['url'=> '/admin/productos/add', 'files' => true]) !!}
             <div class="row">
                 <div class="col-md-6">
                     <label for="nombre">Nombre del producto:</label>
@@ -51,7 +51,7 @@
                 <div class="col-md-3">
                     <label for="imagen">Imagen:</label>
                     <div class="custom-file">
-                        {!! Form::file('img', ['class' =>'custom-file-input', 'id' => 'customFile']) !!}
+                        {!! Form::file('imagen', ['class' =>'custom-file-input', 'id' => 'customFile', 'accept'=>'image/*']) !!}{{--  el accept es para que solo acepte imagenes --}}
                         <label class="custom-file-label" for="customFile">Elegir imagen</label>
                     </div>
                 </div>

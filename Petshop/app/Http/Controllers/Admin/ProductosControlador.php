@@ -19,8 +19,11 @@ class ProductosControlador extends Controller
     }
 
     public function getHome(){
-
-        return view('admin.productos.home');
+        //llamo al modelo de productos para crear la lista
+        $productos = Productos::orderBy('id', 'desc')->paginate(25); //paginado de 25
+        $data = ['productos' => $productos];
+        //a la view le paso la lista
+        return view('admin.productos.home', $data);
     }
 
     

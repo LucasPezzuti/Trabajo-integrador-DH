@@ -20,7 +20,7 @@
                                     <div class="home_discount_text">29/11</div>
                                 </div>
                                 <div class="home_title"> | blackFriday | </div>
-                                <div class="button button_1 home_button trans_200"><a href="{{ url('tienda/productos') }}">Compra Ahora!</a></div>
+                                <div class="button button_1 home_button trans_200"><a href="{{ url('/productos') }}">Compra Ahora!</a></div>
                             </div>
                         </div>
                     </div>
@@ -35,7 +35,7 @@
                                     <div class="home_discount_text">29/11</div>
                                 </div>
                                 <div class="home_title"> | blackFriday | </div>
-                                <div class="button button_1 home_button trans_200"><a href="{{ url('tienda/productos') }}">Compra Ahora!</a></div>
+                                <div class="button button_1 home_button trans_200"><a href="{{ url('/productos') }}">Compra Ahora!</a></div>
                             </div>
                         </div>
                     </div>
@@ -50,7 +50,7 @@
                                     <div class="home_discount_text">29/11</div>
                                 </div>
                                 <div class="home_title"> | blackFriday | </div>
-                                <div class="button button_1 home_button trans_200"><a href="{{ url('tienda/productos') }}">Compra Ahora!</a></div>
+                                <div class="button button_1 home_button trans_200"><a href="{{ url('/productos') }}">Compra Ahora!</a></div>
                             </div>
                         </div>
                     </div>
@@ -75,7 +75,7 @@
                         <div class="col-lg-4 box_col">
                             <div class="box">
                                 <div class="box_image"><img src="/static/images/foto1.png" alt=""></div>
-                                <div class="box_title trans_200"><a href="{{ url('tienda/productos') }}">Ofertas</a></div>
+                                <div class="box_title trans_200"><a href="{{ url('/productos') }}">Ofertas</a></div>
                             </div>
                         </div>
     
@@ -83,7 +83,7 @@
                         <div class="col-lg-4 box_col">
                             <div class="box">
                                 <div class="box_image"><img src="/static/images/foto2.jpg" alt=""></div>
-                                <div class="box_title trans_200"><a href="{{ url('tienda/productos') }}">Nuevos Productos</a></div>
+                                <div class="box_title trans_200"><a href="{{ url('/productos') }}">Nuevos Productos</a></div>
                             </div>
                         </div>
     
@@ -91,7 +91,7 @@
                         <div class="col-lg-4 box_col">
                             <div class="box">
                                 <div class="box_image"><img src="/static/images/foto3.jpg" alt=""></div>
-                                <div class="box_title trans_200"><a href="{{ url('tienda/productos') }}">Mejores Precios</a></div>
+                                <div class="box_title trans_200"><a href="{{ url('/productos') }}">Mejores Precios</a></div>
                             </div>
                         </div>
     
@@ -135,7 +135,7 @@
                                             
                                             </div>
 
-                                            <div class="product_button ml-auto mr-auto trans_200"><a href="carrito.php">añadir</a></div>
+                                            <div class="product_button ml-auto mr-auto trans_200"><a href="{{route('cart-add', $p[0]->slug ) }}">añadir</a></div>
                                         </div>
                                     </div>	
                                 </div>
@@ -166,7 +166,7 @@
                                             
                                             </div>
 
-                                            <div class="product_button ml-auto mr-auto trans_200"><a href="carrito.php">añadir</a></div>
+                                            <div class="product_button ml-auto mr-auto trans_200"><a href="{{route('cart-add', $p[1]->slug ) }}">añadir</a></div>
                                         </div>
                                     </div>	
                                 </div>
@@ -197,7 +197,7 @@
                                             
                                             </div>
 
-                                            <div class="product_button ml-auto mr-auto trans_200"><a href="carrito.php">añadir</a></div>
+                                            <div class="product_button ml-auto mr-auto trans_200"><a href="{{route('cart-add', $p[2]->slug ) }}">añadir</a></div>
                                         </div>
                                     </div>	
                                 </div>
@@ -227,7 +227,7 @@
                                             
                                             </div>
 
-                                            <div class="product_button ml-auto mr-auto trans_200"><a href="carrito.php">añadir</a></div>
+                                            <div class="product_button ml-auto mr-auto trans_200"><a href="{{route('cart-add', $p[3]->slug ) }}">añadir</a></div>
                                         </div>
                                     </div>	
                                 </div>

@@ -62,16 +62,16 @@ class ConexionControlador extends Controller
     //el email es unico y lo compara con email de la base de datos
     public function postRegistro(Request $request){
         $rules = [
-            'name' => 'required',
-            'lastname' => 'required',
+            'nombre' => 'required',
+            'apellido' => 'required',
             'email' => 'required|email|unique:App\user,email',
             'password' => 'required|min:8',
             'cpassword' => 'required|same:password'
         ];
         //defino los mensajes para las validaciones
         $messages = [
-            'name.required' => 'Su nombre es requerido.',
-            'lastname.required' => 'Su apellido es requerido.',
+            'nombre.required' => 'Su nombre es requerido.',
+            'apellido.required' => 'Su apellido es requerido.',
             'email.required' => 'Su email es requerido.',
             'email.email' => 'El formato de su email es incorrecto.',
             'email.unique' => 'Ya existe un usuario registrado con este email.',
@@ -95,8 +95,8 @@ class ConexionControlador extends Controller
             //creo una nueva instancia del modelo user, para guardar los datos en la tabla usuarios.
             // e encondea por seguridad
             $user = new user;
-            $user->nombre = e($request->input('name'));
-            $user->apellido = e($request->input('lastname'));
+            $user->nombre = e($request->input('nombre'));
+            $user->apellido = e($request->input('apellido'));
             $user->email = e($request->input('email'));
             $user->password = Hash::make($request->input('password'));
             

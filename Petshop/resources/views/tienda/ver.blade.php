@@ -58,8 +58,9 @@
                                         echo strip_tags(html_entity_decode($cont));
                                         @endphp
                                         
-                                    </div>
-									<button class="cart_button trans_200">añadir</button>
+									</div>
+									<div class="product_button ml-auto mr-auto trans_200"><a href="{{route('cart-add',$producto[0]->slug ) }}">añadir</a></div>
+									{{-- //<button class="cart_button trans_200" href="{{route('cart-add', $producto[0]->slug ) }}">Añadir al carrito</button> --}}
 								</form>
 								
                             </div>

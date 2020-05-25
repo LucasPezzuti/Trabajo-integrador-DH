@@ -1,0 +1,11 @@
+.table-cart
+{
+    background: #fff;
+    border-radius:1em;
+    padding:1em;
+    margin-bottom: 30px;
+}
+
+.table-cart img{
+    width:50px;
+}

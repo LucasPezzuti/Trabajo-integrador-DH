@@ -14,11 +14,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     {{-- font awesome iconos --}}
     <script src="https://kit.fontawesome.com/cf91392eed.js" crossorigin="anonymous"></script>
+    <script src="/static/js/jquery-3.2.1.min.js"></script>
     {{-- jquery para tooltips --}}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     {{-- fancybox para imagenes --}}
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
     <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
+    <script src="/static/js/jautocalc.js"></script> {{-- autocalc --}}
+    <script src="/static/js/script.js"></script> {{-- autocalc --}}
+
+
+
 
     {{-- <link rel="stylesheet" type="text/css" href="styles/bootstrap-4.1.3/bootstrap.css"> --}}
     {{-- <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> --}}
@@ -27,7 +36,8 @@
     <link rel="stylesheet" type="text/css" href="/static/css/tienda/OwlCarousel2-2.2.1/animate.css">
     <link rel="stylesheet" type="text/css" href="/static/css/tienda/main_styles.css">
     <link rel="stylesheet" type="text/css" href="/static/css/tienda/responsive.css">
-    
+    <link rel="stylesheet" type="text/css" href="/static/css/tienda/main.css">
+
 
 
     {{-- bootstrap --}}
@@ -92,14 +102,20 @@
                             <div class="email">{{ Auth::user()->email }}
                             </div>
                         </div>
-                        <li><a href="{{ url('/tienda/perfil') }}">Mi Perfil</a></li>   
+                        <li><a href="{{ url('/perfil') }}">Mi Perfil</a></li>   
                     @php   
                     endif;
     
                     @endphp        
                         <li><a href="{{ url('/') }}">Inicio</a></li>
                         <li><a href="{{ url('/productos') }}">Productos</a></li>
-                        <li><a href="{{ url('../login') }}">Login</a></li> 
+                    @php
+                        if(!isset(Auth::user()->rol)):
+                    @endphp
+                        <li><a href="{{ url('../login') }}">Login</a></li>
+                    @php
+                        endif; 
+                    @endphp
                         <li><a href="{{ url('/faq') }}">F.A.Q.</a></li>
                         <li><a href="{{ url('/contacto') }}">Contactanos!</a></li>
                     </ul>
@@ -153,7 +169,7 @@
                             <div class="email">{{ Auth::user()->email }}
                             </div>
                         </div>
-                        <li><a href="{{ url('/tienda/perfil') }}">Mi Perfil</a></li> 
+                        <li><a href="{{ url('/perfil') }}">Mi Perfil</a></li> 
 
                     @php   
                     endif;
@@ -161,7 +177,13 @@
     
                         <li class="menu_mm"><a href="{{ url('/') }}">Inicio</a></li>
                         <li class="menu_mm"><a href="{{ url('/productos') }}">Productos</a></li>
+                        @php
+                        if(!isset(Auth::user()->rol)):
+                        @endphp
                         <li class="menu_mm"><a href="{{ url('../login') }}">Login</a></li>
+                        @php
+                        endif; 
+                        @endphp
                         <li class="menu_mm"><a href="{{ url('/faq') }}">F.A.Q.</a></li>
                         <li class="menu_mm"><a href="{{ url('/contacto') }}">Contactanos!</a></li>
                 </ul>
@@ -241,14 +263,21 @@
                             <div class="email">{{ Auth::user()->email }}
                             </div>
                         </div>
-                    <li><a href="{{ url('/tienda/perfil') }}">Mi Perfil</a></li>   
+                    <li><a href="{{ url('/perfil') }}">Mi Perfil</a></li>   
                     @php   
                     endif;
     
                     @endphp 
                       <li><a href="{{ url('/') }}">Inicio<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-                      <li><a href="{{ url('/productos') }}">Productos<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>				
+                      <li><a href="{{ url('/productos') }}">Productos<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                      @php
+                    
+                        if(!isset(Auth::user()->rol)):
+                      @endphp
                       <li><a href="{{ url('../login') }}">Login<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                      @php
+                      endif; 
+                      @endphp
                       <li><a href="{{ url('/faq') }}">F.A.Q.<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
                       <li><a href="{{ url('/contacto') }}">Contactanos!<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
                 </ul>
@@ -256,7 +285,7 @@
     
             <!-- Carrito -->
             <div class="cart d-flex flex-row align-items-center justify-content-start">
-                <div class="cart_icon"><a href="{{ url('/tienda/carrito') }}">
+                <div class="cart_icon"><a href="{{route('cart-show') }}">
                     <img src="/static/images/bag.png" alt="">
                     <div class="cart_num">1</div>
                 </a></div>
@@ -269,20 +298,19 @@
         @yield('content')
     
     
-    {{-- <script src="js/jquery-3.2.1.min.js"></script> --}}
-    <script src="static/css/tienda/bootstrap-4.1.3/popper.js"></script>
-    <script src="static/css/tienda/bootstrap-4.1.3/bootstrap.min.js"></script>
+   
     <script src="static/css/tienda/greensock/TweenMax.min.js"></script>
     <script src="static/css/tienda/greensock/TimelineMax.min.js"></script>
     <script src="static/css/tienda/scrollmagic/ScrollMagic.min.js"></script>
     <script src="static/css/tienda/greensock/animation.gsap.min.js"></script>
     <script src="static/css/tienda/greensock/ScrollToPlugin.min.js"></script>
     <script src="static/css/tienda/OwlCarousel2-2.2.1/owl.carousel.js"></script>
-    <script src="static/css/tienda/easing/easing.js"></script>
+    {{-- <script src="static/css/tienda/easing/easing.js"></script> --}}
     <script src="static/css/tienda/parallax-js-master/parallax.min.js"></script>
     <script src="static/css/tienda/Isotope/isotope.pkgd.min.js"></script>
     <script src="static/css/tienda/Isotope/fitcolumns.js"></script>
     <script src="static/js/custom.js"></script>
+    <script src="static/js/cart.js"></script>
 
 </body>
 </html>

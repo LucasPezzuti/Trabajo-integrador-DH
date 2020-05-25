@@ -11,7 +11,7 @@
         </div>
 
         <div class="inside">
-            asdasd
+            
         </div>
     </div>
 </div>

@@ -10,6 +10,10 @@
 @endforeach
 
  --}}
+
+<div style="padding-left:600px; padding-top:100px;"><h1>Nuestros productos</h1></div>
+
+
  <div class="products">
     <div class="section_container">
         <div class="container">
@@ -34,7 +38,7 @@
                                     <div class="product_price">{{ $producto->precio }}</div>
 
                                 </div>
-                                <div class="product_button ml-auto mr-auto trans_200"><a href="carrito.php">añadir</a></div>
+                                <div class="product_button ml-auto mr-auto trans_200"><a href="{{route('cart-add', $producto->slug )}}">añadir</a></div>
                             </div>	
                         </div>
                         @endforeach

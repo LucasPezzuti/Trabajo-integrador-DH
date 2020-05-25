@@ -13,22 +13,22 @@
     <div class ="inside">
         {!! Form::open(['url' => '/registro']) !!}
 
-        <label for="name">Nombre</label>
+        <label for="nombre">Nombre</label>
         <div class="input-group">
             <div class="input-group-prepend">
                 <div class="input-group-text"><i class="fas fa-user"></i>
                 </div>
             </div>
-        {!! Form::text('name', null, ['class' => 'form-control', 'required']) !!}
+        {!! Form::text('nombre', null, ['class' => 'form-control', 'required']) !!}
         </div>
 
-        <label for="lastname" class="mtop16">Apellido</label>
+        <label for="apellido" class="mtop16">Apellido</label>
         <div class="input-group">
             <div class="input-group-prepend">
                 <div class="input-group-text"><i class="fas fa-user-tag"></i>
                 </div>
             </div>
-        {!! Form::text('lastname', null, ['class' => 'form-control', 'required']) !!}
+        {!! Form::text('apellido', null, ['class' => 'form-control', 'required']) !!}
         </div>
 
         <label for="email" class="mtop16">Email</label>

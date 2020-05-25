@@ -35,16 +35,30 @@ class TiendaControlador extends Controller
     }
 
     public function getProductos(){
+
+        $c = Categorias::all();
+        $p = Productos::inRandomOrder()->take(5)->get();
+
         
-        return view('tienda.productos');
+
+        return view('tienda.productos')->with([ 'categorias' => $c, 'productos' => $p,]);
+        
 
     }
 
-    public function getFiltrados($catego){
+    public function getFiltrados(){
 
-        $cates = Categorias::where('id', $catego);
-        $data = ['cates' => $cates];
-        return view('tienda.filtrado', $data);
+/*         $c = Categorias::all();
+        //$data = ['c' => $c];
+        return view('tienda.filtrado')->with(['categorias' -> $c]); */
 
+    }
+
+    public function verProductos($producto){
+
+        $prod = Productos::where('nombre', $producto)->get();
+
+        return view('tienda.ver')->with([ 'producto' => $prod,]);
+        
     }
 }

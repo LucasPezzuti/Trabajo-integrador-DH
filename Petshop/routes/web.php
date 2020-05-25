@@ -31,4 +31,5 @@ Route::get('/faq', 'tienda\TiendaControlador@getFaq')->name('faq');
 Route::get('/productos', 'tienda\TiendaControlador@getProductos')->name('productos');
 
 Route::post('/productos', 'tienda\TiendaControlador@PostProductos')->name('productos');
-Route::get('/filtrado/{catego}', 'tienda\TiendaControlador@getFiltrados')->name('filtrados');
+/* Route::get('/filtrado/{catego}', 'tienda\TiendaControlador@getFiltrados')->name('filtrados'); */
+Route::get('/ver/{producto}', 'tienda\TiendaControlador@verProductos')->name('ver_productos');

@@ -26,3 +26,9 @@ Route::get('/registro', 'ConexionControlador@getRegistro')->name('registro');
 Route::post('/registro', 'ConexionControlador@postRegistro')->name('registro');
 Route::get('/recover', 'ConexionControlador@getRecover')->name('recover');
 Route::post('/recover', 'ConexionControlador@postRecover')->name('recover');
+Route::get('/contacto', 'tienda\TiendaControlador@getContacto')->name('contacto');
+Route::get('/faq', 'tienda\TiendaControlador@getFaq')->name('faq');
+Route::get('/productos', 'tienda\TiendaControlador@getProductos')->name('productos');
+
+Route::post('/productos', 'tienda\TiendaControlador@PostProductos')->name('productos');
+Route::get('/filtrado/{catego}', 'tienda\TiendaControlador@getFiltrados')->name('filtrados');

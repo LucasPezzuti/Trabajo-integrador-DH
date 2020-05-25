@@ -1,6 +1,7 @@
 /* funcion de ckeditor, tiene una variable llamada base que voy a crear de forma global. La variable genera una ruta absoluta hacia el dominio 
  */
 var base = location.protocol+'//'+location.host;
+var route = document.getElementsByName('routeName')[0].getAttribute('content');
 
 /* inicializo la funcion  */
 $(document).ready(function(){

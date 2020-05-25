@@ -107,4 +107,92 @@ class ProductosControlador extends Controller
 
     }
 
+    public function getProductoEdit($id){
+
+        $p = Productos::find($id); //busca el registro con este id a traves del modelo productos
+        $cats = Categorias::where('modulo', '0')->pluck('nombre', 'id');
+        $data = ['cats' => $cats, 'p' => $p]; //paso el registro q traje a la vista con la variable $p
+        return view('admin.productos.edit', $data);
+        
+    }
+    
+    public function postProductoEdit($id, Request $request ){
+
+        $rules = [
+            'nombre' => 'required',
+            //'imagen' => 'required',
+            //'imagen' => 'image',
+            'precio' => 'required',
+            'contenido' => 'required'
+        ];
+
+        $messages = [
+            'nombre.required' => 'El nombre del producto es requerido.',
+            //'imagen.image' => 'El archivo no es una imagen válida.',
+            'precio.required' => 'Ingrese el precio del producto.',
+            'contenido.required' => 'Ingrese una descripción del producto.'
+
+        ];
+
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+        if($validator->fails()):
+            //si falla junta los errores y los devuelve con la variable de sesion message
+            //con el tipo de alerta danger puedo mostrarlas con bootstrap
+            return back()->withErrors($validator)->with('message', 'Se ha producido un error.')->with('typealert','danger')->withInput();
+            //el withInput sirve para persistir los datos, osea si falla el guardado no perdemos los datos y no hay que volver a ingresarlos.
+        else:
+            //path es ruta donde se va a guardar las imagenes
+            //la carpeta va a ser la fecha en la q subimos la imagen, para que no esten todas en el mismo lugar y no tarde tanto en idenxar
+            $path = '/'.date('Y-m-d');
+
+
+            //con el trim le saco los espacios, y con getclientblabla le extraigo la extension.
+            if($request->hasFile('imagen')):
+            $ext = trim($request->file('imagen')->getClientOriginalExtension());
+            //path donde se guarda la imagen
+            $upload_path = Config::get('filesystems.disks.uploads.root'); //clase de laravel configurada en eas ruta(carpeta config)
+            //reemplazo la extension por un espacio vacio.
+            $nombre = Str::slug(str_replace($ext,'',$request->file('imagen')->getClientOriginalName())); //voy a extraer el nombre de la imagen eliminando espacios y caracteres especiales
+            $filename= rand(1,9999999).'-'.$nombre.'.'.$ext; //nuevo nombre para el archivo q se guarda. numero random + nombre + extension
+            $final_file = $upload_path.'/'.$path.'/'.$filename; 
+            endif;       
+            
+            $producto = Productos::find($id); //busco el producto a editar
+            $producto->estado ='0'; //0= borrador, 1= se ven en la tienda
+            $producto->nombre = e($request->input('nombre'));
+        
+            $producto->categoria_id = $request->input('categorias');
+
+            if($request->hasFile('imagen')):  //si hay imagen 
+            $producto->file_path = date('Y-m-d'); //carpeta destino
+            $producto->imagen = $filename;
+            endif;
+
+            $producto->precio = $request->input('precio');
+            $producto->endescuento = $request->input('endescuento');
+            $producto->descuento = $request->input('descuento');
+            $producto->contenido = e($request->input('contenido'));
+            //el primer "contenido" es el campo de la tabla, el segundo es la clase que le puse al campo en el form add 
+
+            if($producto->save()):
+                if($request->hasFile('imagen')): // Si hay un archivo coni el nombre "imagen"..
+                    $file = $request->imagen->storeAs($path, $filename, 'uploads'); //guarda el archivo en el path que marque en uploads
+                    //clase image intervention 
+                    $img = Image::make($final_file);
+                    //fit te deja crear una miniatura con los parametros de tamaño
+                    //en lugar de fit puedo poner resize tambien, que la ajusta, no la corta como fit
+                    $img->resize(256, 256, function($constraint){
+                        //actualiza el tamaño
+                        $constraint->upsize();
+                    });
+                    //para no sobreescribir la que ya tenemos, creo una nueva miniatura por separado
+                    $img->save($upload_path.'/'.$path.'/t_'.$filename);
+                endif;
+                return back()->with('message', 'Actualizado con éxito.')->with('typealert','success');
+            endif;
+        endif;  
+        
+    }
+
 }

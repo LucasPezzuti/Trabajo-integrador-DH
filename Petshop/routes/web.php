@@ -13,13 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/* Route::get('/', function () {
     return view('welcome');
-});
+}); */
 
 // Ruta auth
+Route::get('/', 'tienda\TiendaControlador@getHome')->name('home');
 Route::get('/login', 'ConexionControlador@getLogin')->name('login');
 Route::post('/login', 'ConexionControlador@postLogin')->name('login');
 Route::get('/logout', 'ConexionControlador@getLogout')->name('logout');
 Route::get('/registro', 'ConexionControlador@getRegistro')->name('registro');
 Route::post('/registro', 'ConexionControlador@postRegistro')->name('registro');
+Route::get('/recover', 'ConexionControlador@getRecover')->name('recover');
+Route::post('/recover', 'ConexionControlador@postRecover')->name('recover');

@@ -42,11 +42,11 @@
                     <tr>
                         <td>{{ $p->id }}</td>
                         <td>
-                            <a href="{{ url('/uploads/'.$p->file_path.'/'.$p->imagen) }}"> {{-- le paso como link la misma imagen pero sin el prefijo t_ para q al darle click abra la imagen grande --}}
+                            <a href="{{ url('/uploads/'.$p->file_path.'/'.$p->imagen) }}" data-fancybox="gallery"> {{-- le paso como link la misma imagen pero sin el prefijo t_ para q al darle click abra la imagen grande --}}
                                 <img src="{{ url('/uploads/'.$p->file_path.'/t_'.$p->imagen) }}" width="64"></td> {{-- aca hago uso del campo file_path de la tabla donde se guarda el path de la imagen --}}{{--  t_ es para llamar a la miniatura --}}
                             </a>
                         <td>{{ $p->nombre }}</td>
-                        <td>{{ $p->cat->nombre }}</td> {{-- aca cat es una variable que defini en el modelo de productos con la relacion a categorias. --}} 
+                        <td>{{ $p->cat->nombre }}</td> {{-- aca cat es una variable que definimos en el modelo de productos con la relacion a categorias. --}} 
                         <td>{{ $p->precio }}</td>
                         <td>  
                             <div class="opts">

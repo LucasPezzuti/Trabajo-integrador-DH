@@ -20,19 +20,19 @@
     <div class="main">
         <ul>
             <li>
-            <a href="{{ url('/admin') }}"><i class="fas fa-home"></i>Administrador</a>
+            <a href="{{ url('/admin') }}" class="lk-panel"><i class="fas fa-home"></i>Administrador</a>
             </li>
 
             <li>
-                <a href="{{ url('/admin/productos') }}"><i class="fas fa-boxes"></i>Productos</a>
+                <a href="{{ url('/admin/productos') }}" class="lk-productos lk-agregar_productos lk-editar_productos"><i class="fas fa-boxes"></i>Productos</a>
             </li>
 
             <li> {{-- le pongo 0 porque pongo por defecto las categorias de productos --}}
-                <a href="{{ url('/admin/categorias/0') }}"><i class="fas fa-folder"></i>Categorías</a>
+                <a href="{{ url('/admin/categorias/0') }}" class="lk-categorias lk-agregar_categorias lk-borrar_categorias lk-editar_categorias"><i class="fas fa-folder"></i>Categorías</a>
             </li>
 
             <li>
-                <a href="{{ url('/admin/users') }}"><i class="fas fa-users"></i>Usuarios</a>
+                <a href="{{ url('/admin/users') }}" class="lk-lista_de_usuarios"><i class="fas fa-users"></i>Usuarios</a>
             </li>
         </ul>
     </div>

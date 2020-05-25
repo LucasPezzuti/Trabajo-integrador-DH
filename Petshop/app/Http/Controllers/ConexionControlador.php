@@ -110,4 +110,44 @@ class ConexionControlador extends Controller
         Auth::logout();
         return redirect('/');
     }
+
+    public function getRecover(){
+        return view('conexion.recover');
+    }
+
+    public function postRecover(Request $request){
+        $rules = [
+    
+            'email' => 'required|email',
+
+        ];
+        //defino los mensajes para las validaciones
+        $messages = [
+          
+            'email.required' => 'Su email es requerido.',
+            'email.email' => 'El formato de su email es incorrecto.',
+
+        ];
+        
+        //llamo a la clase validator, con el metodo make y le paso parametros
+        //le paso los valores que se enviaron en la peticion(request), tambien las reglas 
+        //entonces en validator se almacena el resultado de las validaciones
+        //la variable messages que le paso es la de arriba, definiendo los errores.
+        $validator = Validator::make($request->all(), $rules, $messages);
+        if($validator->fails()):
+            //si falla junta los errores y los devuelve con la variable de sesion message
+            //con el tipo de alerta danger puedo mostrarlas con bootstrap
+            return back()->withErrors($validator)->with('message', 'Se ha producido un error.')->with('typealert','danger');
+        else:
+            $user = User::where('email', $request->input('email'))->count();
+            if($user == "1"):
+                $user = User::where('email', $request->input('email'))->first();
+                $code = rand(100000, 900000);
+                $data = ['nombre' => $user->nombre, 'email'=> $user->email, 'code' => $code];
+                return view('emails.password_recover', $data);
+            else:
+                return back()->with('message', 'Este correo electrónico no existe.')->with('typealert', 'danger');
+            endif;
+        endif;     
+    }
 }

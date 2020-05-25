@@ -42,14 +42,15 @@
                             <td>{{ $user->nombre }}</td>
                             <td>{{ $user->apellido }}</td>
                             <td>{{ $user->email }}</td>
+                         
                             <td>
                                 {{-- editar/eliminar --}}
-                                <div class="opts">
+      {{--                           <div class="opts">
                                     <a href="{{ url('/admin/user/'.$user->id.'/edit')}}"><i class="fas fa-edit"></i></a>
                                     <a href="{{ url('/admin/user/'.$user->id.'/delete')}}"><i class="fas fa-trash"></i></a>
-                                </div>
-                            </td>
-
+                                </div> --}}
+                            </td>  
+                               
                         </tr>
                     @endforeach
                 </tbody>

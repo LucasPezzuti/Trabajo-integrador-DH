@@ -40,7 +40,7 @@ class TiendaControlador extends Controller
     public function getProductos(){
 
         $c = Categorias::all();
-        $p = Productos::inRandomOrder()->take(5)->get();
+        $p = Productos::inRandomOrder()->take(8)->get();
 
         
 
@@ -90,7 +90,7 @@ class TiendaControlador extends Controller
     $rules = [
         'nombre' => 'required',
         'apellido' => 'required',
-        'email' => 'required|email|unique:App\user,email'
+        'email' => 'required|email'
     ];
     //mensajes presonalizados
     $messages = [
@@ -98,7 +98,7 @@ class TiendaControlador extends Controller
         'apellido.required' => 'Su apellido es requerido.',
         'email.required' => 'Su email es requerido.',
         'email.email' => 'El formato de su email es incorrecto.',
-        'email.unique' => 'Ya existe un usuario registrado con este email.',
+        /* 'email.unique' => 'Ya existe un usuario registrado con este email.', */
     ];
     //validacion 
 

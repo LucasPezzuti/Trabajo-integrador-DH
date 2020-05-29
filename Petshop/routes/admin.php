@@ -10,6 +10,7 @@ Route::prefix('/admin')->group(function(){
     Route::post('/productos/add', 'Admin\ProductosControlador@postProductoAdd')->name('agregar_productos');
     Route::post('/productos/{id}/edit', 'Admin\ProductosControlador@postProductoEdit')->name('editar_productos');
     Route::get('/productos/{id}/edit', 'Admin\ProductosControlador@getProductoEdit')->name('editar_productos');
+    Route::get('/productos/{id}/delete', 'Admin\ProductosControlador@getProductoDelete')->name('borrar_productos');
 
 
      /* Categorias */

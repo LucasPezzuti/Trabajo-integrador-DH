@@ -195,4 +195,11 @@ class ProductosControlador extends Controller
         
     }
 
+    public function getProductoDelete($id){
+        $p = Productos::find($id);
+        if($p->delete()):
+            return back()->with('message', 'Borrado con éxito.')->with('typealert', 'success');
+        endif;
+    }
+
 }

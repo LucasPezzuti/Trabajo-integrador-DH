@@ -128,7 +128,7 @@
                     <div class="cart d-flex flex-row align-items-center justify-content-start">
                         <div class="cart_icon"><a href="carrito.php">
                             <img src="/static/images/bag.png" alt="">
-                            <div class="cart_num">1</div>
+                            
                         </a></div>
                     </div>
     
@@ -287,7 +287,7 @@
             <div class="cart d-flex flex-row align-items-center justify-content-start">
                 <div class="cart_icon"><a href="{{route('cart-show') }}">
                     <img src="/static/images/bag.png" alt="">
-                    <div class="cart_num">1</div>
+                    
                 </a></div>
                 <div class="cart_text">Carrito</div>
             </div>
